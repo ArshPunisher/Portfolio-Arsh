@@ -1,0 +1,54 @@
+{
+  "name": "Arsh Ramgarhia",
+  "shortName": "Arsh",
+  "role": "Full-Stack Web Architect",
+  "tagline": "Crafting digital experiences where code meets craft.",
+  "headlines": [
+    "Hello, I'm Arsh.",
+    "Ciao, I'm Arsh.",
+    "Bonjour, I'm Arsh.",
+    "Hola, I'm Arsh.",
+    "Sawasdee, I'm Arsh."
+  ],
+  "intro": "I'm a Full-Stack Web Developer turning bold ideas into pixel-perfect, performance-obsessed web products. From silky-smooth React interfaces to battle-tested Node.js backends, I build the kind of software users actually love opening twice.",
+  "longBio": "I design, engineer, and ship full-stack web applications end to end. My toolkit revolves around React, Next.js, Node.js, Express, PostgreSQL, MongoDB, Firebase, and Tailwind CSS, and my obsession is the seam where elegant frontends meet rock-solid backends. I treat every project like a flagship release: motion that feels intentional, data that flows in milliseconds, and architecture that scales without drama.",
+  "location": "India",
+  "availability": "Open for select freelance & full-time roles",
+  "email": "arshsiddle0822@gmail.com",
+  "resumeUrl": "https://drive.google.com/file/d/1xiKKmDzm4BkmVMlGxZsSaCCTBBghnkpE/view?usp=sharing",
+  "siteUrl": "https://portfolioarsh.vercel.app",
+  "yearsOfExperience": 3,
+  "projectsShipped": 24,
+  "happyClients": 18,
+  "linesOfCoffee": "∞",
+  "stats": [
+    { "label": "Years building the web", "value": "3+" },
+    { "label": "Products shipped", "value": "24" },
+    { "label": "Happy collaborators", "value": "18" },
+    { "label": "Average Lighthouse score", "value": "98" }
+  ],
+  "principles": [
+    {
+      "title": "Performance is a feature.",
+      "body": "If it doesn't load in a blink, it doesn't ship. Bundles get audited, queries get profiled, and every animation earns its place."
+    },
+    {
+      "title": "Design is decisions, not decoration.",
+      "body": "I treat layout, motion, and microcopy as engineering problems. Every shadow, easing curve, and hover state has a reason."
+    },
+    {
+      "title": "Ship the boring scaffolding well.",
+      "body": "Auth, error handling, accessibility, telemetry — the unglamorous 80% is where great products are quietly won."
+    },
+    {
+      "title": "Code that future-you can read.",
+      "body": "No clever tricks for clever's sake. Modular, tested, and documented enough that the next dev says 'thank you', not 'why?'."
+    }
+  ],
+  "social": {
+    "github": "https://github.com/arshpunisher",
+    "linkedin": "https://www.linkedin.com/in/arsh-ramgarhia/",
+    "twitter": "https://x.com/ArshRamgarhia",
+    "email": "arshsiddle0822@gmail.com"
+  }
+}

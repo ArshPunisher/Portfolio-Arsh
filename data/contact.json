@@ -1,0 +1,62 @@
+{
+  "title": "Let's start a conversation.",
+  "eyebrow": "Contact",
+  "subtitle": "Big idea, small idea, or just a friendly hello — my inbox is open and answered within 24 hours, every weekday.",
+  "email": "arshsiddle0822@gmail.com",
+  "responseTime": "Replies usually within 24 hours.",
+  "channels": [
+    {
+      "icon": "Mail",
+      "label": "Email",
+      "value": "arshsiddle0822@gmail.com",
+      "href": "mailto:arshsiddle0822@gmail.com"
+    },
+    {
+      "icon": "Github",
+      "label": "GitHub",
+      "value": "@arshpunisher",
+      "href": "https://github.com/arshpunisher"
+    },
+    {
+      "icon": "Linkedin",
+      "label": "LinkedIn",
+      "value": "arsh-ramgarhia",
+      "href": "https://www.linkedin.com/in/arsh-ramgarhia/"
+    },
+    {
+      "icon": "Twitter",
+      "label": "Twitter",
+      "value": "@ArshRamgarhia",
+      "href": "https://x.com/ArshRamgarhia"
+    }
+  ],
+  "form": {
+    "title": "Or send a message right here.",
+    "submitLabel": "Send message",
+    "successMessage": "Thanks! Your message landed. I'll get back to you within a day.",
+    "fields": [
+      { "name": "name", "label": "Your name", "type": "text", "placeholder": "Ada Lovelace", "required": true },
+      { "name": "email", "label": "Your email", "type": "email", "placeholder": "ada@empire.dev", "required": true },
+      { "name": "subject", "label": "What is this about?", "type": "text", "placeholder": "A brief headline", "required": true },
+      { "name": "message", "label": "The good stuff", "type": "textarea", "placeholder": "Tell me a bit about the project, the deadline, and how you found me.", "required": true }
+    ]
+  },
+  "faq": [
+    {
+      "q": "What's your typical timeline?",
+      "a": "Most full builds run 4 to 8 weeks. Smaller marketing sites and landing pages are usually 1 to 2 weeks from kickoff to live."
+    },
+    {
+      "q": "Do you work with international clients?",
+      "a": "Always. I keep flexible hours and lean heavily on async-friendly workflows like Loom, Notion, and detailed PR descriptions."
+    },
+    {
+      "q": "Can you join my existing team?",
+      "a": "Yes. I'm comfortable jumping into established codebases, following house style, and contributing as a senior engineer or tech lead."
+    },
+    {
+      "q": "What about ongoing support after launch?",
+      "a": "Every engagement ends with a handover doc, a Loom walkthrough, and a 30-day support window included by default."
+    }
+  ]
+}

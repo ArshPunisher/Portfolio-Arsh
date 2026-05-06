@@ -1,0 +1,51 @@
+{
+  "title": "The road so far.",
+  "eyebrow": "Work history",
+  "subtitle": "Three years of shipping production software, from quiet internal tools to public-facing products.",
+  "items": [
+    {
+      "role": "Full Stack Developer",
+      "company": "YPSS",
+      "type": "Full-time",
+      "from": "Jan 2023",
+      "to": "Sep 2025",
+      "location": "Remote · India",
+      "summary": "Owned full-stack delivery on a cluster of internal and client-facing products. Lived in the seam between product, design, and engineering.",
+      "highlights": [
+        "Designed and shipped full-stack web applications using React, Next.js, Node.js, and PostgreSQL.",
+        "Built an admin panel from scratch for managing users, roles, permissions, and live system data.",
+        "Led a report analysis tool with multi-source ingestion, aggregations, and drill-down dashboards.",
+        "Mentored junior engineers on Git workflows, code review, and modern React patterns."
+      ],
+      "stack": ["React", "Next.js", "Node.js", "PostgreSQL", "Tailwind"]
+    },
+    {
+      "role": "Full Stack Developer Intern",
+      "company": "Xampus",
+      "type": "Internship",
+      "from": "May 2024",
+      "to": "Nov 2024",
+      "location": "Remote",
+      "summary": "Worked alongside a tight cross-functional team on animated marketing sites and internal dashboards.",
+      "highlights": [
+        "Built animated, responsive web apps using React, GSAP, and Tailwind.",
+        "Integrated authentication, file storage, and database flows end-to-end.",
+        "Wired up forms and APIs into seamless multi-step user journeys.",
+        "Optimised page weight and animation timing for sub-second interactions."
+      ],
+      "stack": ["React", "GSAP", "Tailwind", "Firebase", "Node.js"]
+    }
+  ],
+  "education": [
+    {
+      "title": "Self-driven engineering education",
+      "subtitle": "2021 — present",
+      "body": "Hundreds of hours of building, breaking, and reading source code. Specialised in modern React, distributed systems fundamentals, and 3D for the web."
+    },
+    {
+      "title": "Hackathons & open source",
+      "subtitle": "Ongoing",
+      "body": "First-place finisher in a national-level hackathon and a frequent contributor to small open-source utilities I genuinely use."
+    }
+  ]
+}

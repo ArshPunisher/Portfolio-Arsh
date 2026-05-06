@@ -1,0 +1,13 @@
+{
+  "hero": {
+    "primary": { "label": "Start a project", "href": "/booking" },
+    "secondary": { "label": "Explore the work", "href": "/projects" }
+  },
+  "afterTestimonials": {
+    "eyebrow": "Ready when you are",
+    "title": "Let's build something worth opening twice.",
+    "body": "From a quiet landing page to a full-blown 3D product, every great build starts with one short conversation. Pick a slot — coffee's on me.",
+    "primary": { "label": "Book an intro call", "href": "/booking" },
+    "secondary": { "label": "Send a message", "href": "/contact" }
+  }
+}

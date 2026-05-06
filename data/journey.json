@@ -1,0 +1,51 @@
+{
+  "title": "The long version of how I got here.",
+  "eyebrow": "Journey",
+  "subtitle": "A timeline of the moments, missteps, and milestones that turned 'curious kid with a laptop' into a full-stack engineer who ships.",
+  "milestones": [
+    {
+      "year": "2021",
+      "title": "First lines of real JavaScript",
+      "body": "Started building tiny browser games and to-do apps. The bug, as expected, never left."
+    },
+    {
+      "year": "2022",
+      "title": "Discovered React",
+      "body": "Stumbled into the component model, never went back to vanilla DOM-spaghetti. Spent the year shipping side projects on weekends."
+    },
+    {
+      "year": "2023",
+      "title": "Joined YPSS as a Full Stack Developer",
+      "body": "First production codebase, first on-call shift, first taste of 'designing for scale'. Built admin tools used by real humans."
+    },
+    {
+      "year": "2024",
+      "title": "Internship at Xampus + first hackathon win",
+      "body": "Animated marketing builds with GSAP, integrated payments and storage. Won a national-level hackathon with a 36-hour MERN build."
+    },
+    {
+      "year": "2025",
+      "title": "Owned a full-stack analytics suite end-to-end",
+      "body": "Designed the schema, built the API, shipped the dashboards, and trained the operators. The product still runs daily."
+    },
+    {
+      "year": "2026",
+      "title": "Going independent",
+      "body": "Opened up freelance and select full-time conversations. Doubled down on premium 3D web experiences and product-grade builds."
+    }
+  ],
+  "values": [
+    {
+      "title": "Default to honesty.",
+      "body": "If a deadline is unrealistic, I say so on day one. If a feature is the wrong call, I push back with options."
+    },
+    {
+      "title": "Bias to ship.",
+      "body": "A live product teaches you more in a week than a Figma file teaches you in a month."
+    },
+    {
+      "title": "Sweat the seams.",
+      "body": "Loading states, empty states, error states, keyboard support — the small stuff is the brand."
+    }
+  ]
+}

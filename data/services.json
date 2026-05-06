@@ -1,0 +1,118 @@
+{
+  "title": "Services that ship results, not slides.",
+  "eyebrow": "What I do",
+  "subtitle": "Six focused offerings, each built around outcomes you can measure: faster pages, higher conversion, and software that doesn't crumble at scale.",
+  "items": [
+    {
+      "id": "frontend-engineering",
+      "icon": "Sparkles",
+      "title": "Frontend Engineering",
+      "tagline": "Interfaces that feel like silk and load like lightning.",
+      "description": "I build pixel-perfect, fully responsive interfaces with React, Next.js, and Tailwind. Component systems, animations, accessibility — engineered so the brand feels premium on every device.",
+      "deliverables": [
+        "Design-system-driven React/Next.js architecture",
+        "WCAG-AA accessibility baked in from day one",
+        "Framer Motion / GSAP micro-interactions",
+        "Lighthouse 95+ on mobile and desktop"
+      ],
+      "stack": ["React", "Next.js", "TypeScript", "Tailwind", "Framer Motion"]
+    },
+    {
+      "id": "backend-apis",
+      "icon": "Server",
+      "title": "Backend & API Engineering",
+      "tagline": "REST and GraphQL that scale past the launch-day spike.",
+      "description": "Robust Node.js and Express services with thoughtful schemas, predictable error handling, and benchmarked endpoints. I ship APIs you can actually trust on launch day.",
+      "deliverables": [
+        "REST + GraphQL APIs with input validation",
+        "JWT, OAuth, and role-based access control",
+        "Postgres / MongoDB schema modelling",
+        "Caching with Redis and edge runtimes"
+      ],
+      "stack": ["Node.js", "Express", "PostgreSQL", "MongoDB", "Redis"]
+    },
+    {
+      "id": "3d-experiences",
+      "icon": "Box",
+      "title": "Immersive 3D Web",
+      "tagline": "WebGL experiences that turn visitors into believers.",
+      "description": "React Three Fiber, Three.js, and clever shader work — from product configurators to scroll-driven cinematic stories. All without melting laptops.",
+      "deliverables": [
+        "React Three Fiber scenes with Drei helpers",
+        "Custom GLSL shaders & post-processing",
+        "Mobile fallbacks that still look premium",
+        "60fps on mid-range devices, no compromises"
+      ],
+      "stack": ["Three.js", "R3F", "Drei", "GLSL", "GSAP"]
+    },
+    {
+      "id": "fullstack-products",
+      "icon": "Layers",
+      "title": "Full-Stack Product Builds",
+      "tagline": "End-to-end product, not just a polished screen.",
+      "description": "From idea napkin to deployed v1. Auth, billing, dashboards, admin tools, observability — I own the whole stack so your team can focus on customers.",
+      "deliverables": [
+        "From spec to production in weeks, not quarters",
+        "Auth, payments, dashboards, admin panels",
+        "CI/CD with automated previews",
+        "Observability: logs, metrics, error tracking"
+      ],
+      "stack": ["Next.js", "Node", "PostgreSQL", "Stripe", "Vercel"]
+    },
+    {
+      "id": "performance-audits",
+      "icon": "Gauge",
+      "title": "Performance & SEO Audits",
+      "tagline": "Find the bottlenecks. Fix them. Watch rankings climb.",
+      "description": "A surgical look at Core Web Vitals, bundle weight, render paths, and on-page SEO. You get a prioritized fix list with engineering effort and expected impact.",
+      "deliverables": [
+        "Lighthouse + Web Vitals deep dive",
+        "Bundle splitting & lazy-loading strategy",
+        "Structured data, sitemaps, OG metadata",
+        "Pre/post benchmark report you can share"
+      ],
+      "stack": ["Lighthouse", "WebPageTest", "Next.js", "Vercel Analytics"]
+    },
+    {
+      "id": "consulting-mentoring",
+      "icon": "Compass",
+      "title": "Consulting & Code Mentoring",
+      "tagline": "A senior pair-programmer for your sharpest problems.",
+      "description": "Pair sessions, architecture reviews, hiring help, or just an honest second opinion. Bring your messiest pull request — we'll untangle it together.",
+      "deliverables": [
+        "Architecture & code reviews",
+        "Pair programming on hard problems",
+        "Tech-stack selection guidance",
+        "Onboarding playbooks for new hires"
+      ],
+      "stack": ["Architecture", "Code Review", "Docs", "DX"]
+    }
+  ],
+  "process": [
+    {
+      "step": "01",
+      "title": "Discover",
+      "body": "We map the goal, the users, and the constraints. No code yet, just clarity."
+    },
+    {
+      "step": "02",
+      "title": "Design",
+      "body": "Wireframes, motion notes, and architecture diagrams everyone can argue with — in a good way."
+    },
+    {
+      "step": "03",
+      "title": "Develop",
+      "body": "Short, demo-friendly sprints. You see real product every week, not a black box."
+    },
+    {
+      "step": "04",
+      "title": "Deploy",
+      "body": "CI/CD, observability, and a launch plan. Coffee, then we ship."
+    },
+    {
+      "step": "05",
+      "title": "Refine",
+      "body": "Real-user telemetry, A/B tests, and iteration. The launch is the start, not the finish."
+    }
+  ]
+}

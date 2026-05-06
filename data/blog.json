@@ -1,0 +1,97 @@
+{
+  "title": "Field notes from the build cave.",
+  "eyebrow": "Blog",
+  "subtitle": "Short, opinionated essays on building for the web. Less hype, more 'here's what worked, here's what didn't.'",
+  "categories": [
+    "Frontend",
+    "Backend",
+    "3D / WebGL",
+    "Performance",
+    "Career"
+  ],
+  "posts": [
+    {
+      "slug": "why-i-love-react",
+      "title": "Why I still bet on React in 2026",
+      "category": "Frontend",
+      "date": "2026-03-12",
+      "readTime": "6 min read",
+      "excerpt": "After four years and roughly two-dozen production apps, here's the honest case for sticking with React — and where it actually struggles.",
+      "tags": [
+        "React",
+        "Next.js",
+        "Architecture"
+      ],
+      "url": "https://medium.com/@arshramgarhia/why-i-love-react"
+    },
+    {
+      "slug": "three-js-without-melting-laptops",
+      "title": "Three.js without melting your users' laptops",
+      "category": "3D / WebGL",
+      "date": "2026-02-08",
+      "readTime": "9 min read",
+      "excerpt": "A pragmatic checklist for shipping React Three Fiber scenes that look premium and run at 60fps on a four-year-old phone.",
+      "tags": [
+        "Three.js",
+        "R3F",
+        "Performance"
+      ],
+      "url": "#"
+    },
+    {
+      "slug": "designing-apis-people-actually-enjoy",
+      "title": "Designing APIs people actually enjoy using",
+      "category": "Backend",
+      "date": "2026-01-22",
+      "readTime": "7 min read",
+      "excerpt": "URL shapes, error envelopes, idempotency keys, and the small choices that turn an API from 'tolerable' into a developer experience.",
+      "tags": [
+        "Node.js",
+        "Express",
+        "REST"
+      ],
+      "url": "#"
+    },
+    {
+      "slug": "the-perf-audit-that-shipped-1-4s",
+      "title": "The audit that shaved 1.4 seconds off LCP",
+      "category": "Performance",
+      "date": "2026-01-04",
+      "readTime": "8 min read",
+      "excerpt": "A walkthrough of the exact steps I followed to halve LCP on a marketing site — and the surprisingly small fix that mattered most.",
+      "tags": [
+        "Performance",
+        "Lighthouse",
+        "Next.js"
+      ],
+      "url": "#"
+    },
+    {
+      "slug": "shipping-at-startup-speed",
+      "title": "Shipping fast without piling up tech debt",
+      "category": "Career",
+      "date": "2025-12-15",
+      "readTime": "5 min read",
+      "excerpt": "Speed is a feature. Tech debt is also a feature. The trick is knowing which one you're paying for, and when.",
+      "tags": [
+        "Process",
+        "Career"
+      ],
+      "url": "#"
+    },
+    {
+      "slug": "design-systems-as-engineering",
+      "title": "Design systems are an engineering project",
+      "category": "Frontend",
+      "date": "2025-11-29",
+      "readTime": "10 min read",
+      "excerpt": "Tokens, components, docs, governance — and why the engineers should be in the room from week one.",
+      "tags": [
+        "Design System",
+        "Tailwind",
+        "DX"
+      ],
+      "url": "#"
+    }
+  ]
+}

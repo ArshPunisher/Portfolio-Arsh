@@ -1,0 +1,127 @@
+{
+  "title": "A walk through the work.",
+  "eyebrow": "Selected projects",
+  "subtitle": "A small gallery of products I've designed, engineered, and shipped — each one solving a real problem for real users.",
+  "items": [
+    {
+      "id": "ai-resume-builder",
+      "name": "AI Resume Builder",
+      "year": "2025",
+      "category": "AI · SaaS · Productivity",
+      "shortDesc": "An AI co-pilot that turns three sentences into a recruiter-ready resume in minutes.",
+      "longDesc": "A React + Firebase application powered by the OpenAI API. It handles multi-step form flows, real-time preview, beautiful template switching, persistent user sessions, and one-click PDF export. The entire experience is keyboard-friendly, fully responsive, and ships with autosave so users never lose a draft.",
+      "highlights": [
+        "GPT-driven resume content generation",
+        "Multi-step wizard with autosave",
+        "Real-time preview & PDF export",
+        "Firebase auth, Firestore persistence"
+      ],
+      "stack": ["React", "Firebase", "OpenAI API", "Tailwind", "PDF"],
+      "color": "#7C3AED",
+      "accent": "#DC2626",
+      "live": "https://ai-resume-builder-23eb4.web.app/",
+      "code": null,
+      "image": "ai_resume.webp"
+    },
+    {
+      "id": "never-know",
+      "name": "Never Know",
+      "year": "2024",
+      "category": "Marketplace · PERN · Auth",
+      "shortDesc": "A full-stack PERN marketplace with role-based dashboards, JWT auth, and a real cart.",
+      "longDesc": "Every part of this build was hand-rolled: relational schema design, JWT authentication, protected routes, dynamic listings, cart and transaction tracking, and admin tooling. Express middleware does the gatekeeping while PostgreSQL keeps the data honest.",
+      "highlights": [
+        "Role-based dashboards (buyer, seller, admin)",
+        "JWT auth + refresh tokens",
+        "Optimised SQL queries with indexes",
+        "Modular Express middleware pipeline"
+      ],
+      "stack": ["PostgreSQL", "Express", "React", "Node.js", "JWT"],
+      "color": "#A78BFA",
+      "accent": "#6B21D6",
+      "live": null,
+      "code": "https://github.com/ArshPunisher/NeverKnow",
+      "image": "never-know.webp"
+    },
+    {
+      "id": "recipe-bloggers",
+      "name": "Recipe Bloggers",
+      "year": "2024",
+      "category": "MERN · Community · Content",
+      "shortDesc": "A community where home chefs publish recipes, drop reactions, and trade kitchen wisdom.",
+      "longDesc": "A MERN stack platform with token-based authentication, modular Express routes, and Mongoose-validated schemas. Users can post recipes, like, comment, manage their profile, and follow chefs. Built to feel snappy on slow networks.",
+      "highlights": [
+        "Token-based auth and route protection",
+        "Likes, comments, and follower graph",
+        "Mongoose schema validation",
+        "Optimised list rendering with pagination"
+      ],
+      "stack": ["MongoDB", "Express", "React", "Node.js", "JWT"],
+      "color": "#DC2626",
+      "accent": "#7C3AED",
+      "live": "https://recipe-bloggers.onrender.com/",
+      "code": null,
+      "image": "recipe.webp"
+    },
+    {
+      "id": "notes-mern",
+      "name": "Notes",
+      "year": "2024",
+      "category": "Productivity · MERN · CRUD",
+      "shortDesc": "A MERN notes app with categories, tags, and a UI quick enough to keep up with thought.",
+      "longDesc": "A minimal but production-grade notes app. Full CRUD, JWT auth, protected routes, MongoDB indexing for fast tag queries, and a Tailwind UI built around React hooks. Designed to feel friendlier than a sticky note and quicker than a doc.",
+      "highlights": [
+        "JWT auth and protected routes",
+        "Category tagging with indexed queries",
+        "Optimistic updates for snappy UX",
+        "Responsive Tailwind UI"
+      ],
+      "stack": ["MongoDB", "Express", "React", "Node.js", "Tailwind"],
+      "color": "#6B21D6",
+      "accent": "#DC2626",
+      "live": null,
+      "code": "https://github.com/ArshPunisher/Notes-MERN",
+      "image": "notes.webp"
+    },
+    {
+      "id": "report-analysis",
+      "name": "Report Analysis Suite",
+      "year": "2025",
+      "category": "Internal Tool · Data Viz",
+      "shortDesc": "An admin-grade analytics tool that turns sprawling business reports into one-glance insights.",
+      "longDesc": "A full-stack analytics dashboard built at YPSS. It ingests business reports, runs aggregations, and ships clean visualisations — bar, line, area, and donut charts — to operations teams. Behind the curtain: efficient SQL, server-side caching, and a careful UI that respects power users.",
+      "highlights": [
+        "Multi-source report ingestion",
+        "Server-side aggregations + caching",
+        "Drill-down charts with filters",
+        "Role-aware data visibility"
+      ],
+      "stack": ["Next.js", "Node.js", "PostgreSQL", "Recharts", "Redis"],
+      "color": "#8B6CF5",
+      "accent": "#B91C1C",
+      "live": null,
+      "code": null,
+      "image": "report.webp"
+    },
+    {
+      "id": "social-platform",
+      "name": "Social Platform",
+      "year": "2024",
+      "category": "Full-Stack · Community",
+      "shortDesc": "A social network prototype with feeds, friends, real-time chat, and a clean moderation layer.",
+      "longDesc": "An ambitious YPSS project: posts, follower graphs, real-time messaging, content moderation, and an admin panel for trust & safety. Built to test how lean a team can ship a social product without losing the basics.",
+      "highlights": [
+        "Realtime chat with WebSockets",
+        "Follower graph + activity feeds",
+        "Admin moderation tooling",
+        "Image upload with CDN delivery"
+      ],
+      "stack": ["Next.js", "Node.js", "Socket.io", "PostgreSQL", "AWS S3"],
+      "color": "#3F0F87",
+      "accent": "#E55E5E",
+      "live": null,
+      "code": null,
+      "image": "social.webp"
+    }
+  ]
+}

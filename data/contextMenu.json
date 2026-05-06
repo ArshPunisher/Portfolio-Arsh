@@ -1,0 +1,32 @@
+{
+  "groups": [
+    {
+      "id": "navigation",
+      "label": "Navigate",
+      "items": [
+        { "id": "home", "label": "Home", "shortcut": "G H", "action": "navigate", "value": "/" },
+        { "id": "projects", "label": "Projects", "shortcut": "G P", "action": "navigate", "value": "/projects" },
+        { "id": "services", "label": "Services", "shortcut": "G S", "action": "navigate", "value": "/services" },
+        { "id": "contact", "label": "Contact", "shortcut": "G C", "action": "navigate", "value": "/contact" }
+      ]
+    },
+    {
+      "id": "experience",
+      "label": "Experience",
+      "items": [
+        { "id": "intensity", "label": "Toggle motion intensity", "shortcut": "M", "action": "intensity" },
+        { "id": "sound", "label": "Toggle ambient sound", "shortcut": "S", "action": "sound" },
+        { "id": "scroll-top", "label": "Scroll to top", "shortcut": "T", "action": "scroll-top" }
+      ]
+    },
+    {
+      "id": "theme",
+      "label": "Accent",
+      "items": [
+        { "id": "red", "label": "Crimson Red", "action": "accent", "value": "red", "color": "#DC2626" },
+        { "id": "violet", "label": "Royal Violet", "action": "accent", "value": "violet", "color": "#7C3AED" },
+        { "id": "lilac", "label": "Soft Lilac", "action": "accent", "value": "lilac", "color": "#A78BFA" }
+      ]
+    }
+  ]
+}

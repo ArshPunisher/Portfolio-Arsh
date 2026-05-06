@@ -1,0 +1,70 @@
+{
+  "site": {
+    "name": "Arsh Ramgarhia — Full-Stack Web Architect",
+    "shortName": "Arsh Ramgarhia",
+    "url": "https://portfolioarsh.vercel.app",
+    "locale": "en_US",
+    "twitter": "@ArshRamgarhia"
+  },
+  "default": {
+    "title": "Arsh Ramgarhia — Full-Stack Web Developer",
+    "description": "Arsh Ramgarhia is a full-stack web developer building premium React, Next.js, and Node.js products. Hire a developer who ships pixel-perfect, performance-obsessed software.",
+    "keywords": [
+      "Arsh Ramgarhia",
+      "full-stack developer",
+      "React developer",
+      "Next.js developer",
+      "Node.js developer",
+      "TypeScript developer",
+      "freelance web developer",
+      "premium portfolio",
+      "Tailwind CSS",
+      "Framer Motion",
+      "PostgreSQL",
+      "MongoDB",
+      "GraphQL",
+      "AWS",
+      "Vercel",
+      "frontend engineer",
+      "backend engineer"
+    ]
+  },
+  "pages": {
+    "home": {
+      "title": "Arsh Ramgarhia — Full-Stack Web Developer",
+      "description": "Premium portfolio of Arsh Ramgarhia, full-stack web developer crafting React, Next.js, and Node.js products for ambitious teams."
+    },
+    "about": {
+      "title": "About Arsh Ramgarhia | Full-Stack Web Developer",
+      "description": "Get to know Arsh Ramgarhia — a full-stack engineer obsessed with performance, motion, and product quality across React, Next.js, and Node.js."
+    },
+    "services": {
+      "title": "Services | Frontend, Backend & 3D Web Development",
+      "description": "Frontend engineering, backend APIs, immersive 3D web experiences, performance audits, and product builds — services tuned to ship measurable outcomes."
+    },
+    "projects": {
+      "title": "Projects | Featured Web & 3D Builds by Arsh Ramgarhia",
+      "description": "Explore a curated gallery of full-stack web applications built by Arsh Ramgarhia — from AI tools to PERN marketplaces and premium brand sites."
+    },
+    "journey": {
+      "title": "Journey | Career, Education, and Milestones",
+      "description": "The career timeline of Arsh Ramgarhia: full-stack roles, internships, education, and the projects that shaped a senior-quality engineer."
+    },
+    "testimonials": {
+      "title": "Testimonials | What Clients Say About Arsh Ramgarhia",
+      "description": "Real testimonials from clients, founders, and engineering leaders who've shipped premium products with Arsh Ramgarhia."
+    },
+    "blog": {
+      "title": "Blog | Notes on Web, 3D, and Product Engineering",
+      "description": "Field notes from Arsh Ramgarhia on full-stack development, 3D for the web, performance, design systems, and shipping at startup speed."
+    },
+    "booking": {
+      "title": "Book a Call | Hire Arsh Ramgarhia",
+      "description": "Book a 30-minute intro call with Arsh Ramgarhia. Talk through scope, timelines, and whether this is the right fit before any contracts are signed."
+    },
+    "contact": {
+      "title": "Contact Arsh Ramgarhia | Hire a Full-Stack Developer",
+      "description": "Reach out to Arsh Ramgarhia for full-stack engineering, 3D web experiences, performance audits, and senior-grade product collaborations."
+    }
+  }
+}

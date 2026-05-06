@@ -1,0 +1,67 @@
+{
+  "title": "The toolkit, sharpened daily.",
+  "eyebrow": "Stack & strengths",
+  "subtitle": "A curated set of tools I genuinely enjoy. Picked not because they're trendy, but because they consistently get hard things shipped.",
+  "domains": [
+    {
+      "id": "frontend",
+      "name": "Frontend & UI",
+      "description": "Pixel-precise interfaces with motion that earns its place.",
+      "tools": [
+        { "name": "React", "level": 92 },
+        { "name": "Next.js", "level": 90 },
+        { "name": "TypeScript", "level": 85 },
+        { "name": "Tailwind CSS", "level": 94 },
+        { "name": "Framer Motion", "level": 88 },
+        { "name": "Three.js / R3F", "level": 80 }
+      ]
+    },
+    {
+      "id": "backend",
+      "name": "Backend & APIs",
+      "description": "Fast, observable services that don't crumble at scale.",
+      "tools": [
+        { "name": "Node.js", "level": 88 },
+        { "name": "Express", "level": 90 },
+        { "name": "GraphQL", "level": 78 },
+        { "name": "REST design", "level": 92 },
+        { "name": "Auth (JWT/OAuth)", "level": 85 },
+        { "name": "WebSockets", "level": 78 }
+      ]
+    },
+    {
+      "id": "data",
+      "name": "Data & Storage",
+      "description": "Schemas, indexes, and queries that age gracefully.",
+      "tools": [
+        { "name": "PostgreSQL", "level": 88 },
+        { "name": "MongoDB", "level": 82 },
+        { "name": "Redis", "level": 75 },
+        { "name": "Firebase", "level": 86 },
+        { "name": "MySQL", "level": 78 },
+        { "name": "Prisma / Mongoose", "level": 84 }
+      ]
+    },
+    {
+      "id": "cloud",
+      "name": "Cloud & DevOps",
+      "description": "Boring infra is good infra. Predictable deploys, clean rollbacks.",
+      "tools": [
+        { "name": "AWS", "level": 75 },
+        { "name": "Vercel", "level": 92 },
+        { "name": "Docker", "level": 78 },
+        { "name": "Git / GitHub", "level": 94 },
+        { "name": "CI/CD pipelines", "level": 80 },
+        { "name": "Linux", "level": 78 }
+      ]
+    }
+  ],
+  "experienceBars": [
+    { "stack": "Frontend / UI Crafting", "value": 90 },
+    { "stack": "Core Programming", "value": 92 },
+    { "stack": "Backend / APIs", "value": 86 },
+    { "stack": "Database & Querying", "value": 88 },
+    { "stack": "Git & Collaboration", "value": 92 },
+    { "stack": "UX Thinking", "value": 80 }
+  ]
+}

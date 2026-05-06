@@ -1,0 +1,31 @@
+{
+  "title": "Frequently asked, honestly answered.",
+  "eyebrow": "FAQ",
+  "subtitle": "Quick answers to the questions that come up most before we start working together.",
+  "items": [
+    {
+      "q": "What kind of projects are you the right fit for?",
+      "a": "Anything where the bar is high: marketing sites that need to feel premium, full-stack products that need to scale, or 3D experiences that have to perform on real-world devices. If 'good enough' is the goal, I'm the wrong hire."
+    },
+    {
+      "q": "Do you only work solo or can you join a team?",
+      "a": "Both. I've shipped as a solo full-stack lead and as a senior IC inside larger engineering teams. Either way, I write the kind of code that makes onboarding the next person easy."
+    },
+    {
+      "q": "How do you charge?",
+      "a": "Fixed fee for clearly scoped sprints, weekly rate for ongoing engagements. We agree on outcomes and milestones up front so neither of us is guessing."
+    },
+    {
+      "q": "What's your stance on AI in the workflow?",
+      "a": "Use it like a sharp intern. AI accelerates research, scaffolding, and refactors, but architecture and product judgment stay human. Every line still gets reviewed."
+    },
+    {
+      "q": "Can you redesign an existing product without breaking it?",
+      "a": "Yes. I work in safe, incremental PRs with feature flags and visual regression tests. No 'big bang' rewrites unless that's what the business genuinely needs."
+    },
+    {
+      "q": "Do you sign NDAs?",
+      "a": "Always, for any serious conversation. Send yours through and I'll sign before our intro call."
+    }
+  ]
+}

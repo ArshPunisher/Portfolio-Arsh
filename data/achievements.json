@@ -1,0 +1,55 @@
+{
+  "title": "Trophies, certificates, and the occasional bragging right.",
+  "eyebrow": "Achievements",
+  "subtitle": "Milestones from hackathons, certifications, and projects that genuinely moved the needle.",
+  "items": [
+    {
+      "id": "hackathon-winner",
+      "title": "Hackathon Winner",
+      "year": "2024",
+      "category": "Competition",
+      "summary": "Took first place at a national-level hackathon for a full-stack productivity tool built and shipped inside 36 hours.",
+      "tags": ["Hackathon", "Full-Stack", "Team Lead"]
+    },
+    {
+      "id": "lighthouse-perfect",
+      "title": "Lighthouse 100 across the board",
+      "year": "2025",
+      "category": "Performance",
+      "summary": "Hit perfect Performance, Accessibility, Best Practices, and SEO scores on a client's marketing site after a focused two-week audit.",
+      "tags": ["Performance", "SEO", "A11y"]
+    },
+    {
+      "id": "report-suite-launch",
+      "title": "Report Analysis Suite — production launch",
+      "year": "2025",
+      "category": "Product",
+      "summary": "Owned end-to-end delivery of an internal report analytics suite at YPSS, used daily by operations teams.",
+      "tags": ["Full-Stack", "Data Viz", "Internal Tooling"]
+    },
+    {
+      "id": "open-source",
+      "title": "Open-source utilities",
+      "year": "Ongoing",
+      "category": "Community",
+      "summary": "Maintain a handful of small open-source utilities for personal use that other devs have actually starred and forked. The internet works.",
+      "tags": ["OSS", "Community"]
+    },
+    {
+      "id": "mentor",
+      "title": "Mentor to junior engineers",
+      "year": "2024 — present",
+      "category": "Leadership",
+      "summary": "Hosted weekly code reviews and pair-programming sessions for junior devs on the YPSS team. Receipts: their PR-merge times dropped 30%.",
+      "tags": ["Mentorship", "Code Review"]
+    },
+    {
+      "id": "shipping-streak",
+      "title": "Shipping streak",
+      "year": "2025",
+      "category": "Personal",
+      "summary": "Pushed code to production every single week for an entire calendar year. Boring on paper, transformative in practice.",
+      "tags": ["Discipline", "Habit"]
+    }
+  ]
+}

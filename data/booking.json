@@ -1,0 +1,71 @@
+{
+  "title": "Got an idea? Let's give it a calendar slot.",
+  "eyebrow": "Book a call",
+  "subtitle": "Thirty focused minutes to talk through your project. No sales script — just an honest conversation about whether I'm the right person to build it.",
+  "ctaPrimary": "Book a 30-minute intro call",
+  "ctaSecondary": "Send a message instead",
+  "details": [
+    {
+      "icon": "Clock",
+      "title": "30 minutes",
+      "body": "Quick, structured, and respectful of your calendar."
+    },
+    {
+      "icon": "Video",
+      "title": "Google Meet",
+      "body": "Camera optional. Coffee mandatory."
+    },
+    {
+      "icon": "Globe",
+      "title": "Async-friendly",
+      "body": "If timezones don't line up, send me a Loom — I reply with one back."
+    }
+  ],
+  "agenda": [
+    "What you're trying to build (or fix).",
+    "Who it's for and why now.",
+    "Constraints: budget, deadline, team.",
+    "Whether I can help — and if not, who can."
+  ],
+  "packages": [
+    {
+      "name": "Starter Sprint",
+      "duration": "1–2 weeks",
+      "priceTag": "From $1.5k",
+      "ideal": "Landing pages, marketing sites, MVP frontends.",
+      "includes": [
+        "Brand-aligned UI design",
+        "Up to 6 responsive sections",
+        "SEO + analytics wiring",
+        "One round of refinements"
+      ],
+      "highlight": false
+    },
+    {
+      "name": "Product Build",
+      "duration": "4–8 weeks",
+      "priceTag": "From $5k",
+      "ideal": "Full-stack apps, dashboards, internal tools.",
+      "includes": [
+        "Full-stack architecture",
+        "Auth, payments, and admin tooling",
+        "CI/CD with previews",
+        "Two rounds of post-launch iteration"
+      ],
+      "highlight": true
+    },
+    {
+      "name": "Premium 3D",
+      "duration": "3–6 weeks",
+      "priceTag": "From $4k",
+      "ideal": "Brand sites, product configurators, hero scenes.",
+      "includes": [
+        "Custom 3D / WebGL scenes",
+        "Mobile fallbacks that still impress",
+        "Performance budget enforced",
+        "Recorded handover walkthrough"
+      ],
+      "highlight": false
+    }
+  ]
+}

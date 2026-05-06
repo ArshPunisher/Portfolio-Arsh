@@ -1,0 +1,69 @@
+{
+  "title": "Kind words from the people I've built with.",
+  "eyebrow": "Social proof",
+  "subtitle": "Collaborators, clients, and teammates who trusted me with their code and lived to tell the tale.",
+  "items": [
+    {
+      "id": "t1",
+      "quote": "Arsh delivered our admin platform in half the time we'd planned for. The UI feels expensive, the API is rock solid, and the docs are honestly the best I've ever inherited.",
+      "name": "Priya Mehta",
+      "role": "Product Lead",
+      "company": "YPSS",
+      "rating": 5,
+      "avatar": "P"
+    },
+    {
+      "id": "t2",
+      "quote": "We came in with a moodboard and a deadline. Arsh translated it into a 3D landing page that converts and runs at 60fps on phones I didn't think could do WebGL. Bookmark-worthy work.",
+      "name": "Daniel Okafor",
+      "role": "Founder",
+      "company": "Xampus Labs",
+      "rating": 5,
+      "avatar": "D"
+    },
+    {
+      "id": "t3",
+      "quote": "Most contractors hand you a repo and ghost. Arsh handed us a repo, a runbook, telemetry dashboards, and a 90-minute walkthrough. Tier-one engineering hospitality.",
+      "name": "Sarah Lin",
+      "role": "Engineering Manager",
+      "company": "Quill & Code",
+      "rating": 5,
+      "avatar": "S"
+    },
+    {
+      "id": "t4",
+      "quote": "I've reviewed dozens of full-stack devs for our roster. Arsh is in the top one percent — equally fluent in front-of-house polish and back-of-house reliability.",
+      "name": "Marcus Bell",
+      "role": "CTO",
+      "company": "Northgate Studio",
+      "rating": 5,
+      "avatar": "M"
+    },
+    {
+      "id": "t5",
+      "quote": "The performance audit Arsh ran shaved 1.4s off our LCP and bumped organic traffic 22% in two months. I'd hire him again tomorrow.",
+      "name": "Ananya Rao",
+      "role": "Head of Growth",
+      "company": "Loomwork",
+      "rating": 5,
+      "avatar": "A"
+    },
+    {
+      "id": "t6",
+      "quote": "He treats motion like a craft, not a checkbox. Every transition felt like it belonged. Our brand finally has a digital home worth sharing.",
+      "name": "Jonas Weber",
+      "role": "Creative Director",
+      "company": "Atelier Field",
+      "rating": 5,
+      "avatar": "J"
+    }
+  ],
+  "logos": [
+    "YPSS",
+    "Xampus",
+    "Loomwork",
+    "Northgate",
+    "Quill & Code",
+    "Atelier Field"
+  ]
+}
