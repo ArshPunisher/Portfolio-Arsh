@@ -3,33 +3,68 @@
 @tailwind utilities;
 
 :root {
-  --color-primary: 124 58 237;
-  --color-secondary: 167 139 250;
-  --color-accent: 220 38 38;
+  --color-primary: 91 33 214;
+  --color-secondary: 109 77 227;
+  --color-accent: 185 28 28;
   --color-bg: 245 241 235;
-  --color-ink: 26 15 46;
-  --accent-rgb: 220 38 38;
+  --color-ink: 20 10 36;
+  --accent-rgb: 185 28 28;
+  --bottom-nav-h: calc(66px + env(safe-area-inset-bottom, 0px));
 }
 
 [data-accent="violet"] {
-  --accent-rgb: 124 58 237;
+  --accent-rgb: 91 33 214;
 }
 [data-accent="lilac"] {
-  --accent-rgb: 167 139 250;
+  --accent-rgb: 109 77 227;
 }
 [data-accent="red"] {
-  --accent-rgb: 220 38 38;
+  --accent-rgb: 185 28 28;
+}
+
+html {
+  /* clip (not hidden) keeps position: sticky working while killing sideways scroll */
+  overflow-x: clip;
+  -webkit-text-size-adjust: 100%;
 }
 
 html,
 body {
+  max-width: 100%;
   background: rgb(var(--color-bg));
   color: rgb(var(--color-ink));
   font-family: var(--font-montserrat), "Montserrat", system-ui, sans-serif;
+  /* Medium as the floor — nothing in this UI should read as thin */
+  font-weight: 500;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
   scroll-behavior: smooth;
+}
+
+/* Touch-first defaults */
+button,
+a,
+[role="button"],
+input,
+select,
+textarea {
+  -webkit-tap-highlight-color: rgba(20, 10, 36, 0.06);
+}
+
+/* iOS zooms the page when a control's text is under 16px */
+input,
+select,
+textarea {
+  font-size: 16px;
+}
+
+@media (min-width: 640px) {
+  input,
+  select,
+  textarea {
+    font-size: 14px;
+  }
 }
 
 @media (min-width: 1024px) {
@@ -66,16 +101,25 @@ body {
 
 @layer components {
   .container-luxe {
-    @apply mx-auto w-full max-w-[1440px] px-6 sm:px-8 lg:px-12 xl:px-16;
+    @apply mx-auto w-full max-w-[1440px] px-5 sm:px-8 lg:px-12 xl:px-16;
   }
 
   .h-display {
     font-family: var(--font-cormorant), "Cormorant Garamond", serif;
-    @apply font-light tracking-tight leading-[1.05];
+    @apply font-semibold tracking-tight leading-[1.08];
   }
 
   .h-eyebrow {
-    @apply text-xs uppercase tracking-[0.32em] text-ink-muted font-medium;
+    @apply text-[11px] uppercase tracking-[0.24em] text-ink-muted font-bold sm:text-xs sm:tracking-[0.3em];
+  }
+
+  /* Every section on the site shares one vertical rhythm — tighter on phones */
+  .section-y {
+    @apply py-16 sm:py-24 md:py-32;
+  }
+
+  .page-top {
+    @apply pt-24 sm:pt-32 md:pt-40;
   }
 
   .glass-card {
@@ -87,11 +131,11 @@ body {
   }
 
   .gold-button {
-    @apply relative inline-flex items-center justify-center gap-2 rounded-full bg-accent px-7 py-3.5 text-sm font-medium text-white shadow-[0_12px_30px_-10px_rgba(220,38,38,0.7)] transition-all duration-300 ease-luxe hover:-translate-y-0.5 hover:shadow-[0_20px_40px_-10px_rgba(220,38,38,0.85)] active:translate-y-0;
+    @apply relative inline-flex min-h-[48px] items-center justify-center gap-2 rounded-full bg-accent px-6 py-3.5 text-sm font-semibold text-white shadow-[0_12px_30px_-10px_rgba(185,28,28,0.7)] transition-all duration-300 ease-luxe hover:-translate-y-0.5 hover:shadow-[0_20px_40px_-10px_rgba(185,28,28,0.85)] active:translate-y-0 sm:px-7;
   }
 
   .ghost-button {
-    @apply relative inline-flex items-center justify-center gap-2 rounded-full border border-ink/15 bg-white/70 px-7 py-3.5 text-sm font-medium text-ink backdrop-blur-md transition-all duration-300 ease-luxe hover:-translate-y-0.5 hover:border-ink/30 hover:bg-white;
+    @apply relative inline-flex min-h-[48px] items-center justify-center gap-2 rounded-full border border-ink/20 bg-white/70 px-6 py-3.5 text-sm font-semibold text-ink backdrop-blur-md transition-all duration-300 ease-luxe hover:-translate-y-0.5 hover:border-ink/35 hover:bg-white sm:px-7;
   }
 
   .accent-text {

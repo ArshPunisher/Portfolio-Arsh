@@ -16,7 +16,7 @@ module.exports = {
     extend: {
       colors: {
         primary: {
-          DEFAULT: "#7C3AED",
+          DEFAULT: "#5B21D6",
           50: "#F4EEFE",
           100: "#E5D6FC",
           200: "#CAAEF9",
@@ -38,7 +38,7 @@ module.exports = {
           700: "#3D2B85",
         },
         accent: {
-          DEFAULT: "#DC2626",
+          DEFAULT: "#B91C1C",
           50: "#FBE9E9",
           100: "#F6CACA",
           200: "#EF9494",
@@ -49,10 +49,10 @@ module.exports = {
           700: "#5F0D0D",
         },
         ink: {
-          DEFAULT: "#1A0F2E",
-          soft: "#2D2244",
-          muted: "#6B5F87",
-          subtle: "#9C92B5",
+          DEFAULT: "#140A24",
+          soft: "#241734",
+          muted: "#463A5E",
+          subtle: "#6B5F87",
         },
         cream: {
           DEFAULT: "#F5F1EB",
@@ -109,6 +109,10 @@ module.exports = {
       transitionTimingFunction: {
         luxe: "cubic-bezier(0.16, 1, 0.3, 1)",
         soft: "cubic-bezier(0.25, 0.46, 0.45, 0.94)",
+      },
+      spacing: {
+        "safe-b": "env(safe-area-inset-bottom, 0px)",
+        "bottom-nav": "calc(66px + env(safe-area-inset-bottom, 0px))",
       },
       perspective: {
         500: "500px",
