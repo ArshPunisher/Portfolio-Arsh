@@ -22,7 +22,7 @@
         "Next.js",
         "Architecture"
       ],
-      "url": "https://medium.com/@arshramgarhia/why-i-love-react"
+      "body": []
     },
     {
       "slug": "three-js-without-melting-laptops",
@@ -36,7 +36,7 @@
         "R3F",
         "Performance"
       ],
-      "url": "#"
+      "body": []
     },
     {
       "slug": "designing-apis-people-actually-enjoy",
@@ -50,7 +50,7 @@
         "Express",
         "REST"
       ],
-      "url": "#"
+      "body": []
     },
     {
       "slug": "the-perf-audit-that-shipped-1-4s",
@@ -64,7 +64,7 @@
         "Lighthouse",
         "Next.js"
       ],
-      "url": "#"
+      "body": []
     },
     {
       "slug": "shipping-at-startup-speed",
@@ -77,7 +77,7 @@
         "Process",
         "Career"
       ],
-      "url": "#"
+      "body": []
     },
     {
       "slug": "design-systems-as-engineering",
@@ -91,7 +91,7 @@
         "Tailwind",
         "DX"
       ],
-      "url": "#"
+      "body": []
     }
   ]
 }
