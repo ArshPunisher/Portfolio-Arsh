@@ -35,39 +35,10 @@ export const viewport = {
 };
 
 export default function RootLayout({ children }) {
-  const personSchema = {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    name: personal.name,
-    jobTitle: personal.role,
-    url: personal.siteUrl,
-    email: `mailto:${personal.email}`,
-    sameAs: [
-      personal.social.github,
-      personal.social.linkedin,
-      personal.social.twitter,
-    ],
-    knowsAbout: [
-      "React",
-      "Next.js",
-      "Node.js",
-      "TypeScript",
-      "Express",
-      "PostgreSQL",
-      "MongoDB",
-      "GraphQL",
-      "AWS",
-      "Performance Engineering",
-    ],
-  };
 
   return (
     <html lang="en" className={`${cormorant.variable} ${montserrat.variable}`}>
       <body className="relative bg-cream text-ink antialiased overflow-x-hidden">
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
-        />
         <ExperienceProvider>
           <CustomCursor />
           <ContextMenu />

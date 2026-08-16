@@ -16,12 +16,19 @@ export default function AmbientSound() {
   useEffect(() => {
     if (typeof window === "undefined") return;
 
+    // Only reach for the file once sound is actually switched on — creating it
+    // eagerly fires a network request (and a console 404) on every page load.
+    if (!sound && !audioRef.current) return;
+
     if (!audioRef.current) {
       const audio = new Audio(AUDIO_SRC);
       audio.loop = true;
-      audio.preload = "auto";
+      audio.preload = "none";
       audio.volume = 0;
       audio.crossOrigin = "anonymous";
+      audio.addEventListener("error", () => {
+        /* track missing or undecodable — stay silent rather than throwing */
+      });
       audioRef.current = audio;
     }
 

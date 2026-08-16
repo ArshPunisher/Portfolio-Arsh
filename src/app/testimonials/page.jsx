@@ -2,12 +2,15 @@ import TestimonialsSection from "@/components/sections/TestimonialsSection";
 import BookingCTA from "@/components/sections/BookingCTA";
 import StatsBand from "@/components/sections/StatsBand";
 import { buildMetadata } from "@/lib/seo";
+import JsonLd from "@/components/JsonLd";
+import { buildGraph } from "@/lib/schema";
 
 export const metadata = buildMetadata("testimonials");
 
 export default function TestimonialsPage() {
   return (
     <>
+      <JsonLd data={buildGraph("testimonials")} />
       <section className="relative pt-24 sm:pt-32 md:pt-40">
         <div className="container-luxe">
           <p className="h-eyebrow">Social proof</p>

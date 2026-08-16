@@ -5,12 +5,15 @@ import TestimonialsSection from "@/components/sections/TestimonialsSection";
 import StatsBand from "@/components/sections/StatsBand";
 import { buildMetadata } from "@/lib/seo";
 import { services } from "@/lib/data";
+import JsonLd from "@/components/JsonLd";
+import { buildGraph, servicesSchema } from "@/lib/schema";
 
 export const metadata = buildMetadata("services");
 
 export default function ServicesPage() {
   return (
     <>
+      <JsonLd data={buildGraph("services", { faq: true, extra: [servicesSchema()] })} />
       <section className="relative pt-24 sm:pt-32 md:pt-40">
         <div className="container-luxe">
           <p className="h-eyebrow">Services</p>

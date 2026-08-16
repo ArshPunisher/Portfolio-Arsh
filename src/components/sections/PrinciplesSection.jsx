@@ -28,7 +28,7 @@ export default function PrinciplesSection() {
                 className="luxe-card group p-6 transition-shadow duration-500 hover:shadow-soft-lg"
               >
                 <span className="font-display font-semibold text-3xl accent-text">0{i + 1}</span>
-                <h4 className="mt-3 font-display font-semibold text-xl text-ink md:text-2xl">{p.title}</h4>
+                <h3 className="mt-3 font-display font-semibold text-xl text-ink md:text-2xl">{p.title}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-ink-soft">{p.body}</p>
               </motion.div>
             ))}

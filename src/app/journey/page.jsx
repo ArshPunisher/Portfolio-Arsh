@@ -4,12 +4,15 @@ import StatsBand from "@/components/sections/StatsBand";
 import SectionHeading from "@/components/ui/SectionHeading";
 import { journey, achievements } from "@/lib/data";
 import { buildMetadata } from "@/lib/seo";
+import JsonLd from "@/components/JsonLd";
+import { buildGraph } from "@/lib/schema";
 
 export const metadata = buildMetadata("journey");
 
 export default function JourneyPage() {
   return (
     <>
+      <JsonLd data={buildGraph("journey")} />
       <section className="relative pt-24 sm:pt-32 md:pt-40">
         <div className="container-luxe">
           <p className="h-eyebrow">{journey.eyebrow}</p>

@@ -7,12 +7,15 @@ import StatsBand from "@/components/sections/StatsBand";
 import BookingCTA from "@/components/sections/BookingCTA";
 import { personal, journey } from "@/lib/data";
 import { buildMetadata } from "@/lib/seo";
+import JsonLd from "@/components/JsonLd";
+import { buildGraph } from "@/lib/schema";
 
 export const metadata = buildMetadata("about");
 
 export default function AboutPage() {
   return (
     <>
+      <JsonLd data={buildGraph("about")} />
       <section className="relative pt-24 sm:pt-32 md:pt-40">
         <div className="container-luxe grid grid-cols-1 gap-12 lg:grid-cols-12">
           <div className="lg:col-span-7">
@@ -59,9 +62,9 @@ export default function AboutPage() {
             <div className="luxe-card relative overflow-hidden p-6 sm:p-8">
               <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-primary via-accent to-secondary" />
               <p className="h-eyebrow">A working philosophy</p>
-              <h3 className="h-display mt-3 text-3xl text-ink">
+              <h2 className="h-display mt-3 text-3xl text-ink">
                 Build like a craftsman. Ship like an engineer.
-              </h3>
+              </h2>
               <p className="mt-4 text-sm text-ink-soft">
                 I treat every line of code like it'll be on a billboard, and every product launch like it'll be on the front page. So far, neither has happened — but the habit makes everything feel inevitable.
               </p>
@@ -105,7 +108,7 @@ export default function AboutPage() {
                 className="luxe-card p-5 sm:p-7 transition-shadow duration-500 hover:shadow-soft-lg"
               >
                 <span className="font-display font-semibold text-3xl accent-text">0{i + 1}</span>
-                <h4 className="mt-3 font-display font-semibold text-2xl text-ink">{v.title}</h4>
+                <h3 className="mt-3 font-display font-semibold text-2xl text-ink">{v.title}</h3>
                 <p className="mt-2 text-sm text-ink-soft">{v.body}</p>
               </div>
             ))}

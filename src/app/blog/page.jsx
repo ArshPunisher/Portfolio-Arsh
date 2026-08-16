@@ -3,12 +3,15 @@ import { Clock, ArrowRight } from "lucide-react";
 import BookingCTA from "@/components/sections/BookingCTA";
 import { blog } from "@/lib/data";
 import { buildMetadata } from "@/lib/seo";
+import JsonLd from "@/components/JsonLd";
+import { buildGraph } from "@/lib/schema";
 
 export const metadata = buildMetadata("blog");
 
 export default function BlogPage() {
   return (
     <>
+      <JsonLd data={buildGraph("blog")} />
       <section className="relative pt-24 sm:pt-32 md:pt-40">
         <div className="container-luxe">
           <p className="h-eyebrow">{blog.eyebrow}</p>
@@ -47,7 +50,7 @@ export default function BlogPage() {
                   <Clock className="h-3 w-3 accent-text" /> {p.readTime}
                 </span>
               </div>
-              <h3 className="h-display mt-5 text-2xl text-ink md:text-3xl">{p.title}</h3>
+              <h2 className="h-display mt-5 text-2xl text-ink md:text-3xl">{p.title}</h2>
               <p className="mt-3 flex-1 text-sm text-ink-soft">{p.excerpt}</p>
               <div className="mt-6 flex items-center justify-between border-t border-cream-200 pt-4">
                 <span className="text-xs text-ink-muted">{p.date}</span>

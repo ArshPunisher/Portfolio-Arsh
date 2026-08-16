@@ -4,6 +4,8 @@ import ContactForm from "@/components/sections/ContactForm";
 import FAQSection from "@/components/sections/FAQSection";
 import { contact } from "@/lib/data";
 import { buildMetadata } from "@/lib/seo";
+import JsonLd from "@/components/JsonLd";
+import { buildGraph } from "@/lib/schema";
 
 export const metadata = buildMetadata("contact");
 
@@ -12,6 +14,7 @@ const iconMap = { Mail, Github, Linkedin, Twitter };
 export default function ContactPage() {
   return (
     <>
+      <JsonLd data={buildGraph("contact", { faq: true })} />
       <section className="relative pt-24 sm:pt-32 md:pt-40">
         <div className="container-luxe grid grid-cols-1 gap-12 lg:grid-cols-12">
           <div className="lg:col-span-5">

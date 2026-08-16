@@ -33,7 +33,7 @@ export default function ContactForm() {
         aria-hidden
         className="pointer-events-none absolute -right-20 top-0 h-[280px] w-[280px] rounded-full bg-primary/15 blur-[100px]"
       />
-      <h3 className="h-display text-3xl text-ink md:text-4xl">{contact.form.title}</h3>
+      <h2 className="h-display text-3xl text-ink md:text-4xl">{contact.form.title}</h2>
       <p className="mt-2 text-sm text-ink-soft">{contact.responseTime}</p>
 
       <div className="mt-8 grid grid-cols-1 gap-5 md:grid-cols-2">

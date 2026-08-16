@@ -36,7 +36,6 @@ export default function Navbar() {
           <Link
             href="/"
             data-cursor="hover"
-            aria-label={`${personal.name} — home`}
             className="flex min-w-0 items-center gap-2.5 pl-0.5 pr-2"
           >
             <Image

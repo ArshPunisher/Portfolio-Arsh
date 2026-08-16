@@ -4,6 +4,8 @@ import { booking, personal } from "@/lib/data";
 import { buildMetadata } from "@/lib/seo";
 import FAQSection from "@/components/sections/FAQSection";
 import TestimonialsSection from "@/components/sections/TestimonialsSection";
+import JsonLd from "@/components/JsonLd";
+import { buildGraph } from "@/lib/schema";
 
 export const metadata = buildMetadata("booking");
 
@@ -12,6 +14,7 @@ const iconMap = { Clock, Video, Globe };
 export default function BookingPage() {
   return (
     <>
+      <JsonLd data={buildGraph("booking", { faq: true })} />
       <section className="relative pt-24 sm:pt-32 md:pt-40">
         <div className="container-luxe grid grid-cols-1 gap-12 lg:grid-cols-12">
           <div className="lg:col-span-7">
@@ -56,7 +59,7 @@ export default function BookingPage() {
           <div className="lg:col-span-5">
             <div className="luxe-card p-5 sm:p-7">
               <p className="h-eyebrow">What we'll cover</p>
-              <h3 className="h-display mt-3 text-2xl text-ink md:text-3xl">A 30-minute agenda.</h3>
+              <h2 className="h-display mt-3 text-2xl text-ink md:text-3xl">A 30-minute agenda.</h2>
               <ul className="mt-5 space-y-3">
                 {booking.agenda.map((a) => (
                   <li key={a} className="flex items-start gap-3 text-sm text-ink-soft">
@@ -102,7 +105,7 @@ export default function BookingPage() {
                 <h3 className={`h-display mt-2 text-3xl ${pkg.highlight ? "text-cream" : "text-ink"}`}>
                   {pkg.name}
                 </h3>
-                <p className={`mt-1 font-display font-semibold text-2xl ${pkg.highlight ? "accent-text" : "accent-text"}`}>
+                <p className={`mt-1 font-display font-semibold text-2xl ${pkg.highlight ? "text-accent-200" : "accent-text"}`}>
                   {pkg.priceTag}
                 </p>
                 <p className={`mt-3 text-sm ${pkg.highlight ? "text-cream/70" : "text-ink-soft"}`}>

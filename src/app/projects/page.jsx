@@ -2,12 +2,15 @@ import ProjectsExperience from "@/components/sections/ProjectsExperience";
 import ProjectsPreview from "@/components/sections/ProjectsPreview";
 import BookingCTA from "@/components/sections/BookingCTA";
 import { buildMetadata } from "@/lib/seo";
+import JsonLd from "@/components/JsonLd";
+import { buildGraph } from "@/lib/schema";
 
 export const metadata = buildMetadata("projects");
 
 export default function ProjectsPage() {
   return (
     <>
+      <JsonLd data={buildGraph("projects")} />
       <ProjectsExperience />
       <section className="relative py-10 sm:py-12 md:py-16">
         <div className="container-luxe">

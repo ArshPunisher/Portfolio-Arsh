@@ -9,12 +9,15 @@ import PrinciplesSection from "@/components/sections/PrinciplesSection";
 import MarqueeStrip from "@/components/sections/MarqueeStrip";
 import FAQSection from "@/components/sections/FAQSection";
 import { buildMetadata } from "@/lib/seo";
+import JsonLd from "@/components/JsonLd";
+import { buildGraph, servicesSchema } from "@/lib/schema";
 
 export const metadata = buildMetadata("home");
 
 export default function HomePage() {
   return (
     <>
+      <JsonLd data={buildGraph("home", { faq: true, extra: [servicesSchema()] })} />
       <Hero3D />
       <MarqueeStrip
         items={[

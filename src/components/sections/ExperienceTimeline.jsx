@@ -107,7 +107,7 @@ export default function ExperienceTimeline() {
               <div className="mt-5 space-y-5">
                 {experience.education.map((e) => (
                   <div key={e.title} className="border-b border-cream-200 pb-5 last:border-0 last:pb-0">
-                    <h4 className="font-display font-semibold text-xl text-ink">{e.title}</h4>
+                    <h3 className="font-display font-semibold text-xl text-ink">{e.title}</h3>
                     <p className="text-xs text-ink-muted">{e.subtitle}</p>
                     <p className="mt-2 text-sm text-ink-soft">{e.body}</p>
                   </div>
