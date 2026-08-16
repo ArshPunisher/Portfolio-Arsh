@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { ArrowUpRight } from "lucide-react";
@@ -38,9 +39,15 @@ export default function Navbar() {
             aria-label={`${personal.name} — home`}
             className="flex min-w-0 items-center gap-2.5 pl-0.5 pr-2"
           >
-            <span className="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-ink font-display font-semibold text-base text-cream sm:h-10 sm:w-10 sm:text-lg">
-              A
-            </span>
+            <Image
+              src="/logo/arsh-mark.svg"
+              alt=""
+              width={40}
+              height={40}
+              priority
+              unoptimized
+              className="h-9 w-9 shrink-0 rounded-full sm:h-10 sm:w-10"
+            />
             <span className="flex min-w-0 flex-col leading-none">
               <span className="truncate font-display font-semibold text-lg text-ink sm:text-xl">
                 {personal.name}
