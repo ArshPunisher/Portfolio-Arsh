@@ -175,6 +175,12 @@ textarea {
   }
 }
 
+/* Avatar art bleeds off the bottom of its frame — fade it out instead of hard-cropping */
+.avatar-fade {
+  -webkit-mask-image: linear-gradient(to bottom, #000 76%, transparent 100%);
+  mask-image: linear-gradient(to bottom, #000 76%, transparent 100%);
+}
+
 .canvas-fade-mask {
   -webkit-mask-image: radial-gradient(ellipse at center, black 60%, transparent 100%);
   mask-image: radial-gradient(ellipse at center, black 60%, transparent 100%);

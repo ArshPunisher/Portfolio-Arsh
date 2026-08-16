@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { Github, Linkedin, Twitter, Mail, ArrowUpRight } from "lucide-react";
 import { navigation, personal } from "@/lib/data";
 
@@ -17,6 +18,14 @@ export default function Footer() {
       <div className="container-luxe py-12 sm:py-16">
         <div className="grid grid-cols-1 gap-10 sm:gap-12 lg:grid-cols-12">
           <div className="lg:col-span-5">
+            <Image
+              src="/avatar/arsh-avatar-512.png"
+              alt={`${personal.name} — illustrated portrait`}
+              width={512}
+              height={512}
+              sizes="(max-width: 640px) 160px, 200px"
+              className="avatar-fade mb-6 w-40 drop-shadow-[0_18px_34px_rgba(20,10,36,0.22)] sm:w-52"
+            />
             <p className="h-eyebrow">Let's build it</p>
             <h3 className="h-display mt-3 text-[2rem] text-ink sm:text-4xl md:text-5xl">
               Got an idea? <em className="accent-text not-italic font-normal">Let's draft it.</em>

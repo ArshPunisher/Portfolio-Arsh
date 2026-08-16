@@ -40,13 +40,12 @@ export default function Navbar() {
             className="flex min-w-0 items-center gap-2.5 pl-0.5 pr-2"
           >
             <Image
-              src="/logo/arsh-mark.svg"
+              src="/avatar/arsh-face-192.png"
               alt=""
-              width={40}
-              height={40}
+              width={80}
+              height={80}
               priority
-              unoptimized
-              className="h-9 w-9 shrink-0 rounded-full sm:h-10 sm:w-10"
+              className="h-9 w-9 shrink-0 rounded-full bg-cream-100 object-cover ring-1 ring-cream-200 sm:h-10 sm:w-10"
             />
             <span className="flex min-w-0 flex-col leading-none">
               <span className="truncate font-display font-semibold text-lg text-ink sm:text-xl">

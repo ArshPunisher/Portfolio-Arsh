@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 import { useEffect, useState } from "react";
 import { ArrowRight, ArrowUpRight, Sparkles, Circle } from "lucide-react";
 import FloatingCard from "./FloatingCard";
@@ -178,16 +179,44 @@ export default function Hero3D() {
           </dl>
         </motion.div>
 
+        {/* Avatar — the hero visual */}
         <motion.div
-          className="min-w-0 lg:col-span-6 xl:col-span-6"
+          className="order-first min-w-0 lg:order-none lg:col-span-6 xl:col-span-6"
           initial={{ opacity: 0, scale: 0.94 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
         >
-          <div className="relative mx-auto w-full max-w-[600px]">
+          <div className="relative mx-auto w-full max-w-[340px] sm:max-w-[440px] lg:max-w-[540px]">
             <div
               aria-hidden
-              className="absolute -inset-6 -z-10 rounded-[44px] bg-gradient-to-br from-primary/30 via-cream-100 to-accent/15 blur-2xl"
+              className="absolute inset-x-4 bottom-6 top-8 -z-10 rounded-full bg-gradient-to-br from-primary/35 via-secondary/20 to-accent/25 blur-[70px]"
+            />
+            <Image
+              src="/avatar/arsh-avatar-1024.png"
+              alt={`${personal.name} — illustrated portrait`}
+              width={1024}
+              height={1024}
+              priority
+              sizes="(max-width: 640px) 340px, (max-width: 1024px) 440px, 540px"
+              className="avatar-fade relative w-full drop-shadow-[0_28px_50px_rgba(20,10,36,0.28)]"
+            />
+          </div>
+        </motion.div>
+      </div>
+
+      {/* Code panel — moved below the hero */}
+      <motion.div
+        className="container-luxe mt-14 sm:mt-20"
+        initial={{ opacity: 0, y: 28 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-80px" }}
+        transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+      >
+        <div className="mx-auto w-full max-w-[760px]">
+          <div className="relative">
+            <div
+              aria-hidden
+              className="absolute -inset-4 -z-10 rounded-[40px] bg-gradient-to-br from-primary/25 via-cream-100 to-accent/15 blur-2xl"
             />
 
             <FloatingCard intensity={6} className="rounded-[28px]">
@@ -260,7 +289,7 @@ export default function Hero3D() {
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 1.0, duration: 0.5 }}
-              className="absolute -bottom-6 left-6 hidden rounded-2xl border border-cream-200 bg-white/95 px-4 py-3 shadow-soft backdrop-blur-md lg:block"
+              className="absolute -bottom-9 -left-6 hidden rounded-2xl border border-cream-200 bg-white/95 px-4 py-3 shadow-soft backdrop-blur-md lg:block"
             >
               <p className="text-[10px] font-bold uppercase tracking-[0.24em] text-ink-muted">
                 Now playing
@@ -271,7 +300,7 @@ export default function Hero3D() {
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 1.2, duration: 0.5 }}
-              className="absolute -right-4 top-10 hidden rounded-2xl border border-cream-200 bg-white/95 px-4 py-3 shadow-soft backdrop-blur-md lg:block"
+              className="absolute -right-10 -top-8 hidden rounded-2xl border border-cream-200 bg-white/95 px-4 py-3 shadow-soft backdrop-blur-md lg:block"
             >
               <p className="text-[10px] font-bold uppercase tracking-[0.24em] text-ink-muted">
                 Stack
@@ -279,13 +308,14 @@ export default function Hero3D() {
               <p className="text-sm font-semibold text-ink">Node · Postgres · AWS</p>
             </motion.div>
           </div>
-        </motion.div>
-      </div>
+        </div>
+      </motion.div>
 
       <motion.div
         initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.6, duration: 0.6 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
         className="container-luxe mt-16 hidden items-center justify-between text-xs font-bold uppercase tracking-[0.28em] text-ink-muted md:flex"
       >
         <span>Scroll to wander →</span>
