@@ -118,14 +118,29 @@ export default function Hero3D() {
           </div>
 
           <h1 className="h-display mt-6 text-[2.6rem] text-ink sm:mt-7 sm:text-6xl md:text-7xl xl:text-[88px]">
-            <span className="block overflow-hidden">
+            {/*
+              Every greeting is stacked in one grid cell. The inactive ones stay
+              in the layout but are invisible, so the row is always as tall as
+              the longest greeting wraps at this width — the rotation can never
+              push the rest of the hero around, at any screen size.
+            */}
+            <span className="grid overflow-hidden">
+              {personal.headlines.map((h) => (
+                <span
+                  key={h}
+                  aria-hidden
+                  className="invisible col-start-1 row-start-1 block italic"
+                >
+                  {h}
+                </span>
+              ))}
               <motion.span
                 key={headlineIndex}
                 initial={{ y: "100%", opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 exit={{ y: "-100%", opacity: 0 }}
                 transition={{ duration: 0.55, ease: [0.16, 1, 0.3, 1] }}
-                className="block italic primary-text"
+                className="col-start-1 row-start-1 block italic primary-text"
               >
                 {personal.headlines[headlineIndex]}
               </motion.span>
