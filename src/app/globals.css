@@ -175,6 +175,33 @@ textarea {
   }
 }
 
+/*
+  The rotating greeting must never wrap — a second line either shoves the hero
+  down or forces a permanently empty row. The wrapper is a query container, so
+  the greeting sizes itself against the column it actually occupies: it takes
+  the design size when that fits and shrinks only when it wouldn't. 13cqi comes
+  from the longest greeting, measured at 7.34em wide in this face.
+*/
+.greeting-fit {
+  container-type: inline-size;
+}
+
+.greeting-line {
+  white-space: nowrap;
+  font-size: 2.6rem;                /* fallback where cqi is unsupported */
+  font-size: min(2.6rem, 13cqi);
+}
+
+@media (min-width: 640px) {
+  .greeting-line { font-size: min(3.75rem, 13cqi); }
+}
+@media (min-width: 768px) {
+  .greeting-line { font-size: min(4.5rem, 13cqi); }
+}
+@media (min-width: 1280px) {
+  .greeting-line { font-size: min(5.5rem, 13cqi); }
+}
+
 /* Avatar art bleeds off the bottom of its frame — fade it out instead of hard-cropping */
 .avatar-fade {
   -webkit-mask-image: linear-gradient(to bottom, #000 76%, transparent 100%);
