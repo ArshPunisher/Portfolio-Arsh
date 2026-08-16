@@ -52,12 +52,7 @@ export default function TestimonialsSection() {
                     >
                       {t.avatar}
                     </span>
-                    <div>
-                      <p className="text-sm font-semibold text-ink">{t.name}</p>
-                      <p className="text-xs text-ink-muted">
-                        {t.role} · {t.company}
-                      </p>
-                    </div>
+                    <p className="text-sm font-semibold text-ink">{t.name}</p>
                   </div>
                 </div>
               </FloatingCard>
@@ -65,16 +60,6 @@ export default function TestimonialsSection() {
           ))}
         </div>
 
-        <div className="mt-16 flex flex-wrap items-center justify-center gap-x-10 gap-y-4">
-          {testimonials.logos.map((l) => (
-            <span
-              key={l}
-              className="font-display font-semibold text-xl text-ink-muted opacity-70 transition-opacity hover:opacity-100"
-            >
-              {l}
-            </span>
-          ))}
-        </div>
       </div>
     </section>
   );
