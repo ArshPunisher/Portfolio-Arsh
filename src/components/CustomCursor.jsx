@@ -151,18 +151,18 @@ export default function CustomCursor() {
       <div
         ref={dotRef}
         aria-hidden
-        className="pointer-events-none fixed left-0 top-0 z-[9999] h-2 w-2 rounded-full bg-ink shadow-[0_0_0_1px_rgba(255,255,255,0.4)]"
+        className="pointer-events-none fixed left-0 top-0 z-[10100] h-2 w-2 rounded-full bg-ink shadow-[0_0_0_1px_rgba(255,255,255,0.4)]"
       />
       <div
         ref={ringRef}
         aria-hidden
         data-variant="default"
-        className="arsh-ring pointer-events-none fixed left-0 top-0 z-[9998] rounded-full border backdrop-blur-[2px]"
+        className="arsh-ring pointer-events-none fixed left-0 top-0 z-[10090] rounded-full border backdrop-blur-[2px]"
       />
       <span
         ref={labelRef}
         aria-hidden
-        className="pointer-events-none fixed left-0 top-0 z-[9999] rounded-full bg-ink px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.18em] text-cream opacity-0 transition-opacity duration-200"
+        className="pointer-events-none fixed left-0 top-0 z-[10100] rounded-full bg-ink px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.18em] text-cream opacity-0 transition-opacity duration-200"
       />
     </>
   );
