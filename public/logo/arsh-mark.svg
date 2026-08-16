@@ -8,7 +8,14 @@
       <stop offset="0%" stop-color="#5B21D6"/>
       <stop offset="100%" stop-color="#B91C1C"/>
     </linearGradient>
+    <linearGradient id="mturban" x1="0.1" y1="0" x2="0.9" y2="1">
+      <stop offset="0%" stop-color="#6D4DE3"/>
+      <stop offset="100%" stop-color="#4514AE"/>
+    </linearGradient>
     <clipPath id="mClip"><circle cx="256" cy="256" r="216"/></clipPath>
+    <clipPath id="mTurbanClip">
+      <path d="M122 212C116 124 164 62 256 62c92 0 140 62 134 150-24-13-60-19-96-21l-38 26-38-26c-36 2-72 8-96 21z"/>
+    </clipPath>
   </defs>
 
   <!-- brand ring keeps the mark readable on any background -->
@@ -23,29 +30,39 @@
     <!-- head, sized large so it survives 16px -->
     <path d="M256 92c-70 0-118 46-118 116v56c0 68 52 118 118 118s118-50 118-118v-56c0-70-48-116-118-116z"
           fill="url(#mskin)"/>
-    <ellipse cx="136" cy="252" rx="18" ry="26" fill="#E0A97B"/>
-    <ellipse cx="376" cy="252" rx="18" ry="26" fill="#E0A97B"/>
+    <ellipse cx="136" cy="262" rx="18" ry="26" fill="#E0A97B"/>
+    <ellipse cx="376" cy="262" rx="18" ry="26" fill="#E0A97B"/>
 
-    <!-- hair -->
-    <path d="M138 214c0-78 52-126 118-126s118 48 118 126c0 10-1 18-2 26-7-38-20-62-38-73-24 22-63 33-113 31-33-1-57 13-70 44-6 15-11 30-13 44-1-9-2-19-2-30z"
-          fill="#140A24"/>
+    <!-- ===== Dastaar (turban) ===== -->
+    <path d="M122 212C116 124 164 62 256 62c92 0 140 62 134 150-24-13-60-19-96-21l-38 26-38-26c-36 2-72 8-96 21z"
+          fill="url(#mturban)"/>
+    <g clip-path="url(#mTurbanClip)" fill="none" stroke="#33099A" stroke-width="9" stroke-linecap="round" opacity="0.85">
+      <path d="M110 198C154 136 208 98 294 88"/>
+      <path d="M116 164C162 108 220 76 306 70"/>
+      <path d="M128 130C176 88 228 64 310 62"/>
+      <path d="M152 222C202 168 260 136 344 132"/>
+    </g>
+    <path d="M164 110C198 78 238 64 278 64" stroke="#9B7BF0" stroke-width="11" stroke-linecap="round"
+          fill="none" opacity="0.55"/>
+    <!-- the nok: crisp centre fold -->
+    <path d="M256 220l-16-14h32z" fill="#33099A" opacity="0.9"/>
 
     <!-- brows -->
-    <path d="M180 240c15-10 35-11 51-3" stroke="#140A24" stroke-width="15" stroke-linecap="round" fill="none"/>
-    <path d="M281 237c16-8 36-7 51 3" stroke="#140A24" stroke-width="15" stroke-linecap="round" fill="none"/>
+    <path d="M182 252c15-10 35-11 51-3" stroke="#140A24" stroke-width="15" stroke-linecap="round" fill="none"/>
+    <path d="M279 249c16-8 36-7 51 3" stroke="#140A24" stroke-width="15" stroke-linecap="round" fill="none"/>
 
     <!-- glasses: the strongest small-size cue, so drawn heavy -->
-    <rect x="152" y="252" width="82" height="66" rx="20" fill="#FFFFFF" fill-opacity="0.35" stroke="#140A24" stroke-width="16"/>
-    <rect x="278" y="252" width="82" height="66" rx="20" fill="#FFFFFF" fill-opacity="0.35" stroke="#140A24" stroke-width="16"/>
-    <path d="M234 283h44" stroke="#140A24" stroke-width="16" stroke-linecap="round"/>
-    <path d="M152 274l-22-8" stroke="#140A24" stroke-width="16" stroke-linecap="round"/>
-    <path d="M360 274l22-8" stroke="#140A24" stroke-width="16" stroke-linecap="round"/>
+    <rect x="152" y="264" width="82" height="64" rx="20" fill="#FFFFFF" fill-opacity="0.35" stroke="#140A24" stroke-width="16"/>
+    <rect x="278" y="264" width="82" height="64" rx="20" fill="#FFFFFF" fill-opacity="0.35" stroke="#140A24" stroke-width="16"/>
+    <path d="M234 294h44" stroke="#140A24" stroke-width="16" stroke-linecap="round"/>
+    <path d="M152 286l-22-8" stroke="#140A24" stroke-width="16" stroke-linecap="round"/>
+    <path d="M360 286l22-8" stroke="#140A24" stroke-width="16" stroke-linecap="round"/>
 
     <!-- eyes -->
-    <circle cx="193" cy="285" r="13" fill="#140A24"/>
-    <circle cx="319" cy="285" r="13" fill="#140A24"/>
+    <circle cx="193" cy="296" r="13" fill="#140A24"/>
+    <circle cx="319" cy="296" r="13" fill="#140A24"/>
 
     <!-- smile -->
-    <path d="M222 352c20 16 48 16 68 0" stroke="#140A24" stroke-width="16" stroke-linecap="round" fill="none"/>
+    <path d="M224 356c19 15 45 15 64 0" stroke="#140A24" stroke-width="16" stroke-linecap="round" fill="none"/>
   </g>
 </svg>
