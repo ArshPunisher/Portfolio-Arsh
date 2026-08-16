@@ -1,51 +1,82 @@
 {
   "title": "The road so far.",
   "eyebrow": "Work history",
-  "subtitle": "Three years of shipping production software, from quiet internal tools to public-facing products.",
+  "subtitle": "Two companies, three and a half years, and software that real businesses run on every day — not tutorials, not side projects.",
   "items": [
     {
       "role": "Full Stack Developer",
-      "company": "YPSS",
+      "company": "Totalsoft IT Solutions",
       "type": "Full-time",
-      "from": "Jan 2023",
-      "to": "Sep 2025",
-      "location": "Remote · India",
-      "summary": "Owned full-stack delivery on a cluster of internal and client-facing products. Lived in the seam between product, design, and engineering.",
+      "from": "Jan 2026",
+      "to": "Present",
+      "location": "London, UK · Remote",
+      "summary": "Full stack developer across a portfolio of production SaaS products for logistics and service-industry clients — working end to end from database and API design through React, Next.js, and React Native clients to cloud deployment.",
       "highlights": [
-        "Designed and shipped full-stack web applications using React, Next.js, Node.js, and PostgreSQL.",
-        "Built an admin panel from scratch for managing users, roles, permissions, and live system data.",
-        "Led a report analysis tool with multi-source ingestion, aggregations, and drill-down dashboards.",
-        "Mentored junior engineers on Git workflows, code review, and modern React patterns."
+        "Own delivery end to end: data architecture, APIs, web and mobile clients, and the deploy pipeline behind them.",
+        "Build for regulated, revenue-carrying environments where an outage is an operational and legal problem, not a bug ticket.",
+        "Ship with end-to-end Playwright coverage so releases go out without holding anyone's breath."
       ],
-      "stack": ["React", "Next.js", "Node.js", "PostgreSQL", "Tailwind"]
+      "projects": [
+        {
+          "name": "TMS — Transport Management System",
+          "body": "A transport platform (web console + React Native driver app) running a UK operator's dispatch, fleet, and driver operations, engineered to meet strict UK/EU transport compliance law — drivers' hours, tachograph records, and vehicle inspections. Delivered live GPS tracking, automated driver-hours compliance alerts, and real-time dispatcher–driver chat over WebSockets, replacing manual paperwork with live operational visibility. Every driver-hours, inspection, and defect record is fully auditable, so the system holds up under real regulatory scrutiny."
+        },
+        {
+          "name": "TGM — Totalsoft Garage Manager",
+          "body": "A multi-tenant SaaS platform for garages to manage customers, vehicles, invoices, quotes, and appointments, with tenant data isolation enforced at the architecture level so new paying customers onboard with zero risk of cross-tenant exposure. Automated invoicing, document storage, and SMS notifications, plus a self-signup marketing site and full end-to-end Playwright test coverage."
+        },
+        {
+          "name": "Totalsoft Platform Console",
+          "body": "A product-agnostic billing and governance console managing tenants, subscriptions, and access across every Totalsoft SaaS product — onboarding a new product takes a configuration entry rather than new code. Implemented fully audited role-based access control for approving, suspending, and billing tenants, and integrated Direct Debit billing with live webhook-driven payment events."
+        }
+      ],
+      "stack": [
+        "React",
+        "Next.js",
+        "React Native",
+        "Node.js",
+        "TypeScript",
+        "PostgreSQL",
+        "WebSockets",
+        "AWS",
+        "Playwright"
+      ]
     },
     {
-      "role": "Full Stack Developer Intern",
-      "company": "Xampus",
-      "type": "Internship",
-      "from": "May 2024",
-      "to": "Nov 2024",
-      "location": "Remote",
-      "summary": "Worked alongside a tight cross-functional team on animated marketing sites and internal dashboards.",
+      "role": "Full-Stack Web Developer",
+      "company": "Yuva Parivar Sewa Samiti (YPSS)",
+      "type": "Full-time",
+      "from": "Jan 2023",
+      "to": "Dec 2025",
+      "location": "Nurmahal, Jalandhar, India",
+      "summary": "Built the backend and two web apps — an Admin Panel and a Report Panel — running a national volunteer organization's operations across India, on a shared single sign-on across subdomains.",
       "highlights": [
-        "Built animated, responsive web apps using React, GSAP, and Tailwind.",
-        "Integrated authentication, file storage, and database flows end-to-end.",
-        "Wired up forms and APIs into seamless multi-step user journeys.",
-        "Optimised page weight and animation timing for sub-second interactions."
+        "Designed a Spring Boot backend modeling the full org hierarchy (zones, branches, teams, roles) with a tiered permission engine: 5 role tiers, dozens of individually gated permissions, and full grant/revoke audit history.",
+        "Delivered member management with Aadhaar OCR verification and real-time, exportable (PDF/Excel) analytics dashboards drilling down by zone and branch.",
+        "Added real-time chat, push notifications, and email alerts to keep volunteers and branch leadership in sync across the organization.",
+        "Ran a shared single sign-on across subdomains so one identity works everywhere in the platform."
       ],
-      "stack": ["React", "GSAP", "Tailwind", "Firebase", "Node.js"]
+      "stack": [
+        "Spring Boot",
+        "Java",
+        "React",
+        "PostgreSQL",
+        "Redis",
+        "Firebase",
+        "Docker"
+      ]
     }
   ],
   "education": [
     {
-      "title": "Self-driven engineering education",
-      "subtitle": "2021 — present",
-      "body": "Hundreds of hours of building, breaking, and reading source code. Specialised in modern React, distributed systems fundamentals, and 3D for the web."
+      "title": "Bachelor of Engineering (B.E.), Computer Engineering",
+      "subtitle": "I.K.G. Punjab Technical University · Jun 2020 — Jun 2024",
+      "body": "Graduated with a CGPA of 7.36/10, building production software alongside coursework for the final two years."
     },
     {
-      "title": "Hackathons & open source",
-      "subtitle": "Ongoing",
-      "body": "First-place finisher in a national-level hackathon and a frequent contributor to small open-source utilities I genuinely use."
+      "title": "Senior Secondary",
+      "subtitle": "Amritsar Group Of Colleges, Amritsar · May 2018 — May 2020",
+      "body": "Completed with 84.2%, where the habit of taking things apart to see how they work started paying rent."
     }
   ]
 }
