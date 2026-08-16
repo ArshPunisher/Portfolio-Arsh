@@ -3,95 +3,700 @@
   "eyebrow": "Blog",
   "subtitle": "Short, opinionated essays on building for the web. Less hype, more 'here's what worked, here's what didn't.'",
   "categories": [
-    "Frontend",
+    "Architecture",
+    "AI & Agents",
     "Backend",
-    "3D / WebGL",
-    "Performance",
-    "Career"
+    "Frontend",
+    "Real-time",
+    "Data"
   ],
   "posts": [
     {
-      "slug": "why-i-love-react",
-      "title": "Why I still bet on React in 2026",
+      "slug": "audit-trails-uk-transport-law",
+      "title": "Compliance made me a better engineer",
+      "category": "Architecture",
+      "date": "2026-07-28",
+      "tags": [
+        "Architecture",
+        "Auditing",
+        "PostgreSQL",
+        "Compliance"
+      ],
+      "cover": "/blog/audit-trails-uk-transport-law-cover.png",
+      "excerpt": "I spent a year building fleet software that has to satisfy UK/EU drivers' hours law. It changed how I model data on every project since — including the ones nobody regulates.",
+      "body": [
+        {
+          "type": "p",
+          "text": "For most of my career I treated an audit log the way most people do: a table you add near the end of a sprint, mostly so someone in support can answer 'who changed this?' when a customer complains. Then I started working on a transport management system where a driver's hours record isn't a convenience feature. It's the thing a regulator can ask to see."
+        },
+        {
+          "type": "p",
+          "text": "UK and EU transport rules put hard limits on how long a driver can be at the wheel, how much rest they need, and how vehicle inspections and defects are recorded. If an operator can't produce those records, that's not a bug report. That's their licence."
+        },
+        {
+          "type": "p",
+          "text": "That reframing broke a habit I didn't know I had."
+        },
+        {
+          "type": "h2",
+          "text": "UPDATE is a lie you tell yourself"
+        },
+        {
+          "type": "p",
+          "text": "The default way we all model data is that a row represents the current truth. A driver's shift has a start and an end, so you write the start, then later you UPDATE the row with the end. Clean. Obvious. Completely useless when someone asks what the record looked like three weeks ago."
+        },
+        {
+          "type": "p",
+          "text": "Because the moment you UPDATE, the previous state is gone. Not archived — gone. And 'we don't know' is a bad answer when the question is coming from someone with statutory powers."
+        },
+        {
+          "type": "p",
+          "text": "So we stopped updating things. A shift correction doesn't overwrite the shift; it appends a new event that supersedes the old one. The current state becomes something you derive, not something you store and mutate."
+        },
+        {
+          "type": "code",
+          "lang": "sql",
+          "text": "-- not this\nUPDATE driver_shifts SET ended_at = $1 WHERE id = $2;\n\n-- this\nINSERT INTO shift_events (shift_id, kind, payload, recorded_at, recorded_by, supersedes)\nVALUES ($1, 'shift_ended', $2, now(), $3, $4);"
+        },
+        {
+          "type": "p",
+          "text": "Yes, that's more rows. Storage is cheap and regulators are not."
+        },
+        {
+          "type": "h2",
+          "text": "Every write needs a name attached"
+        },
+        {
+          "type": "p",
+          "text": "The second habit that had to go was anonymous writes. Plenty of systems record what changed without recording who caused it, or they record a service account because the change came through a background job."
+        },
+        {
+          "type": "p",
+          "text": "If a defect record was dismissed, 'the system did it' is not an acceptable answer. Someone dismissed it, or someone configured the rule that dismissed it automatically. Both of those are people, and both need to be on the record."
+        },
+        {
+          "type": "ul",
+          "items": [
+            "Who performed the action, as a real user ID — not a service account standing in for one",
+            "What the state was before and after, not just a diff summary",
+            "When, in UTC, from the server — never a timestamp the client supplied",
+            "Why, where the action supports a reason — dismissals and overrides especially"
+          ]
+        },
+        {
+          "type": "p",
+          "text": "That last one gets pushback every time. Product doesn't want a reason field because it adds friction. But a dismissal without a reason is exactly the record that becomes unexplainable six months later, and friction is the point — you want someone to pause before overriding a compliance alert."
+        },
+        {
+          "type": "h2",
+          "text": "Time is harder than you think"
+        },
+        {
+          "type": "p",
+          "text": "Drivers cross time zones. Rules are written in local time. Tachograph data arrives late, sometimes hours after the event it describes. So you end up needing two different clocks for every event: when it happened, and when you found out about it."
+        },
+        {
+          "type": "p",
+          "text": "Those come apart more often than you'd expect, and if you only store one, late-arriving data silently corrupts your compliance calculations. A rest period that looked compliant on Tuesday can become non-compliant on Thursday when the tachograph download lands."
+        },
+        {
+          "type": "quote",
+          "text": "If your system can't explain why it thought something was true last week, it doesn't really know anything — it just knows the present."
+        },
+        {
+          "type": "h2",
+          "text": "What I took to everything else"
+        },
+        {
+          "type": "p",
+          "text": "The garage SaaS I work on isn't regulated the way transport is. Nobody is going to pull an operator licence over a mis-edited invoice. I still built the invoice history the same way, because the day a customer disputes a charge, 'here is every version of this invoice and who touched it' ends the conversation in about ninety seconds."
+        },
+        {
+          "type": "p",
+          "text": "Same with role and permission changes on the volunteer platform I built before that. Grant and revoke are appended, never overwritten. When someone asks why a branch lead could suddenly see national reports, there's an answer with a name and a timestamp on it."
+        },
+        {
+          "type": "p",
+          "text": "None of this is clever. It's just deciding that history is data, rather than something that falls out of your database as a side effect of the current row."
+        },
+        {
+          "type": "p",
+          "text": "The regulated project forced me into it. Every project since has been better for it."
+        }
+      ],
+      "ogImage": "/blog/audit-trails-uk-transport-law-og.png"
+    },
+    {
+      "slug": "multi-tenant-before-tenants",
+      "title": "Multi-tenant from day one, before you have day two",
+      "category": "Architecture",
+      "date": "2026-07-09",
+      "tags": [
+        "Multi-tenancy",
+        "SaaS",
+        "PostgreSQL",
+        "Security"
+      ],
+      "cover": "/blog/multi-tenant-before-tenants-cover.png",
+      "excerpt": "Adding tenant isolation to a live SaaS is one of the worst jobs in software. Here's the setup that costs you almost nothing on day one and saves you a rewrite later.",
+      "body": [
+        {
+          "type": "p",
+          "text": "Every multi-tenant horror story starts the same way. The product had one customer, so the team built it for one customer, and the tenant_id got added later — usually in a hurry, usually after the second customer signed."
+        },
+        {
+          "type": "p",
+          "text": "The problem isn't the column. Adding a column is easy. The problem is that by then you have four hundred queries written by people who assumed there was only one tenant, and every single one of them has to be correct forever. Miss one and a garage sees another garage's customers."
+        },
+        {
+          "type": "h2",
+          "text": "Isolation belongs below your application code"
+        },
+        {
+          "type": "p",
+          "text": "The instinct is to handle it in the service layer: every query goes through a repository, every repository takes a tenant, done. That works right up until someone writes a query that doesn't go through the repository. A reporting job. A migration script. A quick fix at 11pm."
+        },
+        {
+          "type": "p",
+          "text": "The version that actually holds is one where the database refuses to return the wrong rows even if the application asks for them. In Postgres that's row-level security."
+        },
+        {
+          "type": "code",
+          "lang": "sql",
+          "text": "ALTER TABLE invoices ENABLE ROW LEVEL SECURITY;\n\nCREATE POLICY tenant_isolation ON invoices\n  USING (tenant_id = current_setting('app.tenant_id')::uuid);\n\n-- set once per connection, in middleware\nSET LOCAL app.tenant_id = '...';"
+        },
+        {
+          "type": "p",
+          "text": "Now a forgotten WHERE clause returns nothing instead of returning everything. The failure mode flips from silent data leak to obvious empty page, and an obvious empty page gets fixed the same afternoon."
+        },
+        {
+          "type": "h2",
+          "text": "The part everyone skips: prove it"
+        },
+        {
+          "type": "p",
+          "text": "Writing the policy feels like the work. It isn't. The work is having a test that fails loudly the day someone disables it."
+        },
+        {
+          "type": "p",
+          "text": "We keep a test that creates two tenants, writes data as each, and then tries every read path as the wrong tenant. It's not elegant. It's a long, boring file. It has caught two genuine mistakes, both of which would have been cross-tenant exposure in production."
+        },
+        {
+          "type": "ol",
+          "items": [
+            "Create tenant A and tenant B with overlapping-looking data",
+            "Authenticate as A, hit every list and detail endpoint",
+            "Assert B's records are absent — not filtered in the UI, absent from the response",
+            "Repeat in reverse, because asymmetric bugs are real"
+          ]
+        },
+        {
+          "type": "quote",
+          "text": "A tenant isolation test you never watch fail is a tenant isolation test you don't have."
+        },
+        {
+          "type": "h2",
+          "text": "What about a database per tenant?"
+        },
+        {
+          "type": "p",
+          "text": "It's the strongest isolation you can get and I'd still argue against it for most products. Migrations across hundreds of databases become their own full-time problem, connection pooling gets awkward, and cross-tenant reporting — which someone will ask for — turns into a distributed query."
+        },
+        {
+          "type": "p",
+          "text": "Shared schema with enforced row-level security has been the right trade for everything I've built. If a specific enterprise customer contractually demands physical separation, that's a per-customer deployment, not a reason to reshape the whole product."
+        },
+        {
+          "type": "h2",
+          "text": "The onboarding test"
+        },
+        {
+          "type": "p",
+          "text": "Here's how I know the architecture is holding: adding a new paying customer is a row in a table. No provisioning script, no new environment, no engineer involved."
+        },
+        {
+          "type": "h2",
+          "text": "The bits that aren't rows in a table"
+        },
+        {
+          "type": "p",
+          "text": "Row-level security covers your database. It does nothing for the other three places tenant data leaks, and those are the ones I've seen actually cause incidents."
+        },
+        {
+          "type": "p",
+          "text": "File storage is the big one. If uploaded documents land in a bucket keyed only by a filename or a sequential ID, anyone who can guess a URL can read another tenant's invoices. Every object path needs the tenant in it, and access has to go through a signed URL your application issues after checking the request — not a public bucket with an unguessable name, which is just security through length."
+        },
+        {
+          "type": "p",
+          "text": "Then background jobs. A queued job runs outside the request that created it, so whatever mechanism you use to set the tenant on a connection isn't there any more. The tenant has to be part of the job payload and get re-established when the worker picks it up. We had a report generator that inherited whatever tenant the worker had last touched. It never shipped, but only because the isolation test caught it."
+        },
+        {
+          "type": "ul",
+          "items": [
+            "Storage paths namespaced by tenant, served through signed URLs",
+            "Job payloads carry the tenant explicitly and re-establish it on pickup",
+            "Caches keyed by tenant — a cache key collision is a data leak with good performance",
+            "Logs and error reports scrubbed, so a stack trace doesn't carry one customer's data into another's support ticket"
+          ]
+        },
+        {
+          "type": "p",
+          "text": "That third one is easy to miss. A memoised lookup keyed on user ID alone will happily serve tenant A's result to tenant B if the IDs ever overlap. Put the tenant in the key, always, even when it feels redundant."
+        },
+        {
+          "type": "p",
+          "text": "When onboarding requires a developer, that's not a process problem. That's the architecture telling you the tenant boundary isn't real yet."
+        }
+      ],
+      "ogImage": "/blog/multi-tenant-before-tenants-og.png"
+    },
+    {
+      "slug": "ai-agents-are-apis",
+      "title": "AI agents are just APIs with worse error handling",
+      "category": "AI & Agents",
+      "date": "2026-06-18",
+      "tags": [
+        "AI",
+        "Agents",
+        "APIs",
+        "Reliability"
+      ],
+      "cover": "/blog/ai-agents-are-apis-cover.png",
+      "excerpt": "Everyone's shipping agents. Most of the hard problems turn out to be the same integration problems we've had for twenty years, plus one genuinely new one.",
+      "body": [
+        {
+          "type": "p",
+          "text": "I've now wired language models into a few production surfaces — document extraction, a support triage flow, some internal tooling. The pitch decks make it sound like a new discipline. In practice about eighty percent of the work is the integration engineering we've always done, and the remaining twenty percent is one problem we genuinely haven't had before."
+        },
+        {
+          "type": "h2",
+          "text": "The eighty percent is boring, and that's good news"
+        },
+        {
+          "type": "p",
+          "text": "A model call is a network call to a third party that's slower than you'd like, occasionally rate limits you, sometimes returns something you didn't expect, and bills you per request. We have decades of institutional knowledge about how to handle that."
+        },
+        {
+          "type": "ul",
+          "items": [
+            "Timeouts, retries with backoff, and a circuit breaker so one degraded provider doesn't take your app down",
+            "Idempotency keys, so a retry doesn't double-charge or double-send",
+            "A queue for anything that doesn't need to be synchronous, which is most things",
+            "Cost tracking per feature, because a per-request bill is a per-request bill whether it's an LLM or a payment processor"
+          ]
+        },
+        {
+          "type": "p",
+          "text": "None of that is AI engineering. It's the same discipline as integrating Direct Debit or an SMS gateway, and teams that already do it well tend to ship agents fine."
+        },
+        {
+          "type": "h2",
+          "text": "The twenty percent that's actually new"
+        },
+        {
+          "type": "p",
+          "text": "Here's the part that has no precedent: the failure isn't an error. It's a confident, well-formatted, entirely wrong answer."
+        },
+        {
+          "type": "p",
+          "text": "A payment API that fails returns a 402. You catch it, you handle it, you move on. A model that fails returns a 200 with beautifully structured JSON containing an invoice total that doesn't exist. Your error handling never fires, because from the transport layer's point of view nothing went wrong."
+        },
+        {
+          "type": "quote",
+          "text": "The scariest response your system can get is a valid one that happens to be false."
+        },
+        {
+          "type": "p",
+          "text": "So the engineering moves from 'handle errors' to 'assume plausible output is wrong until something cheap and deterministic says otherwise'."
+        },
+        {
+          "type": "h2",
+          "text": "Verify with code, not with another model"
+        },
+        {
+          "type": "p",
+          "text": "When we extract figures from a document, the model produces the numbers and ordinary code checks them: do the line items sum to the total, is the date within a sane range, does the reference match a pattern we recognise, does this supplier exist in our database."
+        },
+        {
+          "type": "p",
+          "text": "Every one of those checks is a cheap, deterministic, testable function. None of them involve a second model call. When a check fails the item goes to a human queue rather than silently into the ledger."
+        },
+        {
+          "type": "code",
+          "lang": "js",
+          "text": "const extracted = await model.extract(document);\n\nconst issues = [\n  sumsMatch(extracted) ? null : 'line items do not sum to total',\n  knownSupplier(extracted.supplierId) ? null : 'unknown supplier',\n  dateWithinRange(extracted.issuedAt) ? null : 'implausible date',\n].filter(Boolean);\n\nif (issues.length) return queueForReview(extracted, issues);\nreturn commit(extracted);"
+        },
+        {
+          "type": "p",
+          "text": "I keep seeing 'use a second model to check the first model' proposed as the answer. Sometimes it helps. But two systems that fail in correlated ways aren't independent checks, and you've now doubled your latency and your bill to get a verification you can't reason about."
+        },
+        {
+          "type": "h2",
+          "text": "Give the agent the smallest possible blast radius"
+        },
+        {
+          "type": "p",
+          "text": "The other lesson is about permissions. It's tempting to hand an agent broad database access because it makes the demo impressive. Don't."
+        },
+        {
+          "type": "p",
+          "text": "Agents get the same treatment as any other untrusted integration: a narrow set of specific operations, scoped credentials, and destructive actions gated behind a human confirmation. Not because the model is malicious, but because it's non-deterministic, and non-deterministic plus DELETE is a combination you only get to regret once."
+        },
+        {
+          "type": "h2",
+          "text": "Log the whole exchange, not just the result"
+        },
+        {
+          "type": "p",
+          "text": "When a model call produces something wrong, 'it returned a bad total' is not enough to debug with. You need the exact input, the exact output, the model and version, and which of your checks tripped."
+        },
+        {
+          "type": "p",
+          "text": "We store all of it. It's more data than a normal integration log and it has been worth it every single time — partly for debugging, partly because when a provider ships a new model version, the only way to know whether your accuracy moved is to have the old results to compare against."
+        },
+        {
+          "type": "p",
+          "text": "It also makes an uncomfortable question answerable. When someone asks 'how often is this wrong?', the honest answer needs a number, and the number needs records. Teams that can't produce one usually find the real rate is worse than the vibe."
+        },
+        {
+          "type": "p",
+          "text": "The teams shipping agents successfully aren't the ones with the cleverest prompts. They're the ones who treated a model like any other unreliable third-party dependency and built the boring scaffolding around it."
+        }
+      ],
+      "ogImage": "/blog/ai-agents-are-apis-og.png"
+    },
+    {
+      "slug": "websocket-reconnect-nobody-writes",
+      "title": "The WebSocket reconnect logic nobody writes",
+      "category": "Real-time",
+      "date": "2026-05-22",
+      "tags": [
+        "WebSockets",
+        "Real-time",
+        "Reliability",
+        "React Native"
+      ],
+      "cover": "/blog/websocket-reconnect-nobody-writes-cover.png",
+      "excerpt": "Real-time is easy on your laptop and hard on a driver's phone going through a tunnel. What I learned shipping live tracking and chat to people who move.",
+      "body": [
+        {
+          "type": "p",
+          "text": "Every WebSocket tutorial ends at 'and now messages arrive instantly'. Which is true, on a desktop, on office wifi, with the tab focused. Ship the same code to a driver's phone in a moving vehicle and you'll discover how much of real-time is actually about what happens when the connection isn't there."
+        },
+        {
+          "type": "h2",
+          "text": "The connection drops constantly and never tells you"
+        },
+        {
+          "type": "p",
+          "text": "The first thing that surprised me: a dead connection often doesn't fire a close event. The phone goes through a tunnel, the socket is gone, but the client sits there believing it's connected because nothing told it otherwise. It'll happily accept sends into the void."
+        },
+        {
+          "type": "p",
+          "text": "So you can't trust the socket's own state. You need a heartbeat, and crucially it has to be two-way — the client pings, the server pongs, and if the pong doesn't arrive within a window, the client declares the connection dead itself and reconnects. Trusting readyState is how you get drivers whose location silently stopped updating twenty minutes ago."
+        },
+        {
+          "type": "code",
+          "lang": "js",
+          "text": "let missed = 0;\n\nsetInterval(() => {\n  if (missed >= 2) return hardReconnect();   // we decide it's dead\n  missed += 1;\n  socket.send(JSON.stringify({ t: 'ping' }));\n}, 15000);\n\nonMessage((m) => { if (m.t === 'pong') missed = 0; });"
+        },
+        {
+          "type": "h2",
+          "text": "Reconnect storms are self-inflicted outages"
+        },
+        {
+          "type": "p",
+          "text": "Second lesson, learned the embarrassing way. If your server restarts, every client notices at the same instant and reconnects at the same instant. A fleet's worth of devices hitting you simultaneously is a denial of service you built yourself."
+        },
+        {
+          "type": "p",
+          "text": "Exponential backoff with jitter, and a cap. The jitter matters more than the backoff — it's what spreads the herd out. Without it you've just synchronised everyone onto the same slower schedule."
+        },
+        {
+          "type": "code",
+          "lang": "js",
+          "text": "const delay = Math.min(30000, 500 * 2 ** attempt);\nconst jittered = delay * (0.5 + Math.random() * 0.5);\nsetTimeout(connect, jittered);"
+        },
+        {
+          "type": "h2",
+          "text": "Reconnecting isn't resuming"
+        },
+        {
+          "type": "p",
+          "text": "This is the one that actually bit us. You reconnect, the socket is open, everything looks healthy — and the client is quietly missing every message sent during the gap. The UI looks fine. It's just wrong."
+        },
+        {
+          "type": "p",
+          "text": "Every client needs to track the last message it successfully processed and ask for everything since, on reconnect. Which means the server needs a short replay buffer, which means messages need sequence numbers, which means this is a real feature and not a five-line fix."
+        },
+        {
+          "type": "ul",
+          "items": [
+            "Client stores the last sequence number it handled",
+            "On reconnect it sends that number as part of the handshake",
+            "Server replays anything newer from a bounded buffer",
+            "If the gap is bigger than the buffer, the client does a full refetch instead of pretending"
+          ]
+        },
+        {
+          "type": "p",
+          "text": "That last branch is the one people skip, and it's the one that matters. Sometimes the honest answer is 'I've been offline too long, throw away my state and start again'."
+        },
+        {
+          "type": "quote",
+          "text": "Real-time isn't about how fast a message arrives. It's about what your app believes during the seconds it isn't arriving."
+        },
+        {
+          "type": "h2",
+          "text": "Design the offline state, don't inherit it"
+        },
+        {
+          "type": "p",
+          "text": "The last thing, and it's a design decision more than a technical one: decide what the app looks like when it's disconnected, and build that on purpose."
+        },
+        {
+          "type": "p",
+          "text": "For the driver app, that meant queueing actions locally and showing an explicit 'not synced' state rather than optimistically pretending everything went through. A driver who thinks they logged a defect and didn't is a worse outcome than a driver who can see it's pending."
+        },
+        {
+          "type": "h2",
+          "text": "Authentication expires mid-connection"
+        },
+        {
+          "type": "p",
+          "text": "One more thing that only shows up in production. You authenticate the socket at connect time, and then the connection stays open for eight hours. Somewhere in hour three the token expires."
+        },
+        {
+          "type": "p",
+          "text": "A surprising number of implementations just… keep going, because the check only ran once at the handshake. That's a session that outlives its own authorisation, which is a problem if someone's access was revoked in the meantime."
+        },
+        {
+          "type": "p",
+          "text": "We re-validate periodically over the existing connection and let the client refresh its token in place. If the refresh fails the server closes the socket with a specific code, and the client knows to send the user back to login rather than entering its reconnect loop — otherwise a revoked user reconnects forever against a server that keeps refusing them."
+        },
+        {
+          "type": "code",
+          "lang": "js",
+          "text": "socket.onclose = (e) => {\n  if (e.code === 4401) return redirectToLogin();  // auth is gone, don't retry\n  scheduleReconnect();                            // anything else, back off and retry\n};"
+        },
+        {
+          "type": "p",
+          "text": "Optimistic UI is lovely when the network is fine. When the network is the actual problem, honesty beats optimism every time."
+        }
+      ],
+      "ogImage": "/blog/websocket-reconnect-nobody-writes-og.png"
+    },
+    {
+      "slug": "server-components-didnt-kill-spa",
+      "title": "Server Components didn't kill the SPA",
       "category": "Frontend",
-      "date": "2026-03-12",
-      "readTime": "6 min read",
-      "excerpt": "After four years and roughly two-dozen production apps, here's the honest case for sticking with React — and where it actually struggles.",
+      "date": "2026-04-30",
       "tags": [
         "React",
         "Next.js",
+        "Server Components",
         "Architecture"
       ],
-      "body": []
+      "cover": "/blog/server-components-didnt-kill-spa-cover.png",
+      "excerpt": "Two years in, the honest verdict on the App Router: brilliant for content, oversold for dashboards, and the boundary is where all the difficulty lives.",
+      "body": [
+        {
+          "type": "p",
+          "text": "The discourse around React Server Components has been unusually silly, in both directions. One camp says client-side rendering is over. The other says this is all complexity for its own sake. Having now shipped a marketing site, a public portfolio, and a heavily interactive operations console on the App Router, my honest answer is that both camps are describing different applications."
+        },
+        {
+          "type": "h2",
+          "text": "Where they're genuinely excellent"
+        },
+        {
+          "type": "p",
+          "text": "For anything content-shaped, Server Components are the best version of React I've used. Data fetching next to the markup that needs it, no loading spinner waterfall, no client bundle for code that only ever formats a date."
+        },
+        {
+          "type": "p",
+          "text": "The site you're reading is entirely static. The blog listing, these posts, the project pages — all rendered at build time, no client-side fetching, no state management library. That's the version of the web I actually wanted, and the App Router makes it the default rather than something you have to fight for."
+        },
+        {
+          "type": "h2",
+          "text": "Where the story oversells itself"
+        },
+        {
+          "type": "p",
+          "text": "Now take a dispatch console. Live vehicle positions, a chat panel, filters that need to feel instant, forms with interdependent fields. Almost every component needs interactivity, which means almost every component is a client component, which means you've reinvented the SPA with extra ceremony."
+        },
+        {
+          "type": "p",
+          "text": "That's fine. It's the correct outcome for that application. What isn't fine is the pressure to feel bad about it, or to contort a genuinely interactive product into a server-first shape because that's the recommended direction."
+        },
+        {
+          "type": "quote",
+          "text": "The framework's default should match your most common page, not your most impressive demo."
+        },
+        {
+          "type": "h2",
+          "text": "The boundary is where the difficulty actually lives"
+        },
+        {
+          "type": "p",
+          "text": "Here's what nobody warns you about clearly enough: the hard part isn't server components or client components. It's the seam between them."
+        },
+        {
+          "type": "p",
+          "text": "Props crossing that boundary have to be serialisable. Not 'should be' — have to be. So the function you wanted to pass down doesn't go. The class instance doesn't go. The Date works but comes back subtly different than you expected. Context doesn't cross at all, so a provider high in your server tree simply isn't there for the client components underneath it."
+        },
+        {
+          "type": "ul",
+          "items": [
+            "Put 'use client' as far down the tree as you can bear, not at the top of the page",
+            "Push providers into a small client wrapper rather than making the whole layout a client component",
+            "Pass plain data across the boundary — ids and objects, not callbacks and instances",
+            "Expect one confusing afternoon per project where the answer turns out to be 'that's a boundary problem'"
+          ]
+        },
+        {
+          "type": "h2",
+          "text": "What I actually do now"
+        },
+        {
+          "type": "p",
+          "text": "I stopped picking a side and started picking per route. Marketing pages, blogs, documentation, anything crawlable: server-first, static where possible, ship almost no JavaScript. Consoles, editors, anything where the user lives in the page for an hour: client-heavy, and I don't apologise for it."
+        },
+        {
+          "type": "h2",
+          "text": "The mental model that finally made it click"
+        },
+        {
+          "type": "p",
+          "text": "What unstuck this for me was to stop thinking of 'use client' as a performance directive and start reading it as a boundary marker. It doesn't say 'this is slow' or 'this is interactive'. It says: from here down, this code ships to the browser."
+        },
+        {
+          "type": "p",
+          "text": "Once I read it that way, the placement rules stopped feeling arbitrary. Of course context doesn't cross — the provider ran on a server that has already finished responding. Of course you can't pass a function — there's nothing on the other side to call it. The constraints aren't React being awkward, they're the constraints of a network boundary, which we've always had. We just used to draw it explicitly with a fetch call."
+        },
+        {
+          "type": "h2",
+          "text": "What it costs you"
+        },
+        {
+          "type": "p",
+          "text": "An honest accounting, because most write-ups skip this part. Debugging is worse — a stack trace that spans both sides is harder to read than either alone. Some libraries still assume they're running in a browser and fail in ways that take a while to diagnose. And onboarding a developer who knows React but not this model takes real time, because their instincts about where state lives are wrong in a way that isn't obvious from the error."
+        },
+        {
+          "type": "p",
+          "text": "For a content site that's a fine trade. For a small internal tool with three users, honestly, plain client-side React is still a perfectly good answer and I'd stop feeling guilty about it."
+        },
+        {
+          "type": "p",
+          "text": "The framework is good enough now to let one application be both, which is the genuinely useful development. Not that server rendering won — that you stopped having to choose once for the whole codebase."
+        }
+      ],
+      "ogImage": "/blog/server-components-didnt-kill-spa-og.png"
     },
     {
-      "slug": "three-js-without-melting-laptops",
-      "title": "Three.js without melting your users' laptops",
-      "category": "3D / WebGL",
-      "date": "2026-02-08",
-      "readTime": "9 min read",
-      "excerpt": "A pragmatic checklist for shipping React Three Fiber scenes that look premium and run at 60fps on a four-year-old phone.",
+      "slug": "postgres-until-it-hurts",
+      "title": "Use Postgres until it actually hurts",
+      "category": "Data",
+      "date": "2026-03-25",
       "tags": [
-        "Three.js",
-        "R3F",
-        "Performance"
+        "PostgreSQL",
+        "Redis",
+        "Architecture",
+        "Simplicity"
       ],
-      "body": []
-    },
-    {
-      "slug": "designing-apis-people-actually-enjoy",
-      "title": "Designing APIs people actually enjoy using",
-      "category": "Backend",
-      "date": "2026-01-22",
-      "readTime": "7 min read",
-      "excerpt": "URL shapes, error envelopes, idempotency keys, and the small choices that turn an API from 'tolerable' into a developer experience.",
-      "tags": [
-        "Node.js",
-        "Express",
-        "REST"
+      "cover": "/blog/postgres-until-it-hurts-cover.png",
+      "excerpt": "Queues, search, caching, JSON, scheduled jobs. Postgres does all of it well enough for longer than you think, and every service you add is a service you operate.",
+      "body": [
+        {
+          "type": "p",
+          "text": "The reference architecture people reach for by default now: Postgres for relational data, Redis for cache, a dedicated queue, a search service, maybe a document store because part of the data is unstructured. Five systems before the first customer."
+        },
+        {
+          "type": "p",
+          "text": "Each of those is a genuinely good product. Together they're five things to deploy, monitor, back up, upgrade, secure, and reason about when something is slow at 2am. My default now is to start with one and add the second only when I can point at the specific pain."
+        },
+        {
+          "type": "h2",
+          "text": "The queue you probably don't need yet"
+        },
+        {
+          "type": "p",
+          "text": "Postgres has had SKIP LOCKED for years and it turns a table into a perfectly serviceable job queue."
+        },
+        {
+          "type": "code",
+          "lang": "sql",
+          "text": "UPDATE jobs SET status = 'running', claimed_at = now()\nWHERE id = (\n  SELECT id FROM jobs\n  WHERE status = 'pending' AND run_after <= now()\n  ORDER BY run_after\n  FOR UPDATE SKIP LOCKED\n  LIMIT 1\n)\nRETURNING *;"
+        },
+        {
+          "type": "p",
+          "text": "Multiple workers, no double processing, retries and scheduling are just columns. It comfortably handles thousands of jobs a minute, and you get something the dedicated queue can't give you: enqueueing a job in the same transaction as the data change that caused it."
+        },
+        {
+          "type": "p",
+          "text": "That last point is worth more than it sounds. With a separate queue you can commit the row and fail to enqueue, or enqueue and fail to commit. In Postgres both happen or neither does. A whole category of 'the invoice exists but the email never sent' bugs simply never occurs."
+        },
+        {
+          "type": "h2",
+          "text": "Search, until it's really search"
+        },
+        {
+          "type": "p",
+          "text": "Full-text search in Postgres with a tsvector column and a GIN index is genuinely fine for finding a customer by name or a vehicle by registration. That's what most applications mean by search."
+        },
+        {
+          "type": "p",
+          "text": "It's not a competitor to a real search engine once you need fuzzy matching, relevance tuning, faceting, and typo tolerance across millions of documents. But 'find the thing the user is thinking of' is not that problem, and reaching for a search cluster to power a customer lookup is how you end up operating a search cluster."
+        },
+        {
+          "type": "h2",
+          "text": "The cache is usually a missing index"
+        },
+        {
+          "type": "p",
+          "text": "Most of the times I've been asked to add Redis, the actual issue was a query doing a sequential scan or an N+1 in an ORM. Caching that makes the symptom go away and leaves the cause in place — plus now you have invalidation, which is its own permanent tax."
+        },
+        {
+          "type": "p",
+          "text": "Read the query plan first. A properly indexed query returning in two milliseconds doesn't need a cache in front of it, and a cache in front of a slow query is a slow query that's now also sometimes stale."
+        },
+        {
+          "type": "quote",
+          "text": "Every service you add is a service you operate at 2am. Make it earn that."
+        },
+        {
+          "type": "h2",
+          "text": "When to actually add the thing"
+        },
+        {
+          "type": "p",
+          "text": "This isn't purity. I do reach for Redis — for genuine session and rate-limit workloads where the access pattern is wrong for a relational database and the data is disposable. That's a real reason. 'The reference architecture has it' is not."
+        },
+        {
+          "type": "ul",
+          "items": [
+            "Add it when you can name the query or workload that's failing, with numbers",
+            "Add it when the operational cost is smaller than the pain you're removing",
+            "Don't add it because a scaling post said you'd need it at a size you aren't"
+          ]
+        },
+        {
+          "type": "h2",
+          "text": "JSONB is not a schema, but it is a good escape hatch"
+        },
+        {
+          "type": "p",
+          "text": "The other thing people spin up a second database for is semi-structured data — payloads that vary by customer or integration and don't fit neatly into columns. Postgres has handled that with JSONB for years, and you can index into it."
+        },
+        {
+          "type": "p",
+          "text": "Where it goes wrong is when JSONB becomes the design rather than the exception. If a field is queried, filtered, or sorted on by every user, it wants to be a column with a constraint, not a key buried in a blob you can't validate. My rule: structured data in columns, genuinely variable data in JSONB, and any time a JSONB key shows up in a WHERE clause twice, promote it."
+        },
+        {
+          "type": "p",
+          "text": "The systems I've been happiest to maintain years later were the boring ones. One database, understood well, indexed properly. It scaled further than I expected every single time, and when it eventually didn't, I knew exactly which part hurt — because there was only one place to look."
+        }
       ],
-      "body": []
-    },
-    {
-      "slug": "the-perf-audit-that-shipped-1-4s",
-      "title": "The audit that shaved 1.4 seconds off LCP",
-      "category": "Performance",
-      "date": "2026-01-04",
-      "readTime": "8 min read",
-      "excerpt": "A walkthrough of the exact steps I followed to halve LCP on a marketing site — and the surprisingly small fix that mattered most.",
-      "tags": [
-        "Performance",
-        "Lighthouse",
-        "Next.js"
-      ],
-      "body": []
-    },
-    {
-      "slug": "shipping-at-startup-speed",
-      "title": "Shipping fast without piling up tech debt",
-      "category": "Career",
-      "date": "2025-12-15",
-      "readTime": "5 min read",
-      "excerpt": "Speed is a feature. Tech debt is also a feature. The trick is knowing which one you're paying for, and when.",
-      "tags": [
-        "Process",
-        "Career"
-      ],
-      "body": []
-    },
-    {
-      "slug": "design-systems-as-engineering",
-      "title": "Design systems are an engineering project",
-      "category": "Frontend",
-      "date": "2025-11-29",
-      "readTime": "10 min read",
-      "excerpt": "Tokens, components, docs, governance — and why the engineers should be in the room from week one.",
-      "tags": [
-        "Design System",
-        "Tailwind",
-        "DX"
-      ],
-      "body": []
+      "ogImage": "/blog/postgres-until-it-hurts-og.png"
     }
   ]
 }

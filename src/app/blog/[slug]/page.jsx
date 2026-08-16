@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 import { ArrowLeft, ArrowRight, Clock, CalendarDays } from "lucide-react";
 import BookingCTA from "@/components/sections/BookingCTA";
@@ -17,7 +18,7 @@ export function generateMetadata({ params }) {
   if (!post || !isPublished(post)) return {};
 
   const url = `${seo.site.url}/blog/${post.slug}`;
-  const image = post.image ?? "/og-default.png";
+  const image = post.ogImage ?? post.cover ?? "/og-default.png";
 
   return {
     metadataBase: new URL(seo.site.url),
@@ -141,7 +142,7 @@ export default function BlogPostPage({ params }) {
       name: personal.name,
       url: seo.site.url,
     },
-    image: `${seo.site.url}${post.image ?? "/og-default.png"}`,
+    image: `${seo.site.url}${post.ogImage ?? post.cover ?? "/og-default.png"}`,
   };
 
   return (
@@ -179,6 +180,21 @@ export default function BlogPostPage({ params }) {
             {post.excerpt}
           </p>
         </div>
+
+        {post.cover && (
+          <div className="container-luxe mt-9 sm:mt-12">
+            <div className="relative aspect-[1200/630] w-full max-w-[860px] overflow-hidden rounded-[20px] border border-cream-200 bg-cream-100 sm:rounded-[28px]">
+              <Image
+                src={post.cover}
+                alt=""
+                fill
+                priority
+                sizes="(max-width: 1440px) 100vw, 1440px"
+                className="object-cover"
+              />
+            </div>
+          </div>
+        )}
 
         <div className="container-luxe mt-10 sm:mt-14">
           <div className="max-w-[720px]">
