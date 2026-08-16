@@ -1,67 +1,157 @@
 {
   "title": "The toolkit, sharpened daily.",
   "eyebrow": "Stack & strengths",
-  "subtitle": "A curated set of tools I genuinely enjoy. Picked not because they're trendy, but because they consistently get hard things shipped.",
+  "subtitle": "The stack I actually build production systems on — picked because it consistently gets hard things shipped, not because it trends.",
   "domains": [
     {
       "id": "frontend",
       "name": "Frontend & UI",
-      "description": "Pixel-precise interfaces with motion that earns its place.",
+      "description": "Web and mobile clients that hold up under daily operational use.",
       "tools": [
-        { "name": "React", "level": 92 },
-        { "name": "Next.js", "level": 90 },
-        { "name": "TypeScript", "level": 85 },
-        { "name": "Tailwind CSS", "level": 94 },
-        { "name": "Framer Motion", "level": 88 },
-        { "name": "Three.js / R3F", "level": 80 }
+        {
+          "name": "React.js",
+          "level": 93
+        },
+        {
+          "name": "Next.js",
+          "level": 90
+        },
+        {
+          "name": "React Native (Expo)",
+          "level": 85
+        },
+        {
+          "name": "TypeScript",
+          "level": 88
+        },
+        {
+          "name": "Tailwind CSS",
+          "level": 94
+        },
+        {
+          "name": "TanStack Query/Table",
+          "level": 85
+        }
       ]
     },
     {
       "id": "backend",
       "name": "Backend & APIs",
-      "description": "Fast, observable services that don't crumble at scale.",
+      "description": "Services that carry real billing, real compliance, and real traffic.",
       "tools": [
-        { "name": "Node.js", "level": 88 },
-        { "name": "Express", "level": 90 },
-        { "name": "GraphQL", "level": 78 },
-        { "name": "REST design", "level": 92 },
-        { "name": "Auth (JWT/OAuth)", "level": 85 },
-        { "name": "WebSockets", "level": 78 }
+        {
+          "name": "Node.js / Express",
+          "level": 90
+        },
+        {
+          "name": "Spring Boot / Java",
+          "level": 86
+        },
+        {
+          "name": "RESTful API design",
+          "level": 92
+        },
+        {
+          "name": "WebSockets",
+          "level": 85
+        },
+        {
+          "name": "Auth & access control",
+          "level": 90
+        },
+        {
+          "name": "GraphQL",
+          "level": 76
+        }
       ]
     },
     {
       "id": "data",
       "name": "Data & Storage",
-      "description": "Schemas, indexes, and queries that age gracefully.",
+      "description": "Schemas, indexes, and audit trails that age gracefully.",
       "tools": [
-        { "name": "PostgreSQL", "level": 88 },
-        { "name": "MongoDB", "level": 82 },
-        { "name": "Redis", "level": 75 },
-        { "name": "Firebase", "level": 86 },
-        { "name": "MySQL", "level": 78 },
-        { "name": "Prisma / Mongoose", "level": 84 }
+        {
+          "name": "PostgreSQL",
+          "level": 90
+        },
+        {
+          "name": "MySQL",
+          "level": 82
+        },
+        {
+          "name": "MongoDB",
+          "level": 82
+        },
+        {
+          "name": "Redis",
+          "level": 78
+        },
+        {
+          "name": "Firebase",
+          "level": 86
+        },
+        {
+          "name": "Multi-tenant modelling",
+          "level": 88
+        }
       ]
     },
     {
       "id": "cloud",
-      "name": "Cloud & DevOps",
+      "name": "Cloud, DevOps & Integrations",
       "description": "Boring infra is good infra. Predictable deploys, clean rollbacks.",
       "tools": [
-        { "name": "AWS", "level": 75 },
-        { "name": "Vercel", "level": 92 },
-        { "name": "Docker", "level": 78 },
-        { "name": "Git / GitHub", "level": 94 },
-        { "name": "CI/CD pipelines", "level": 80 },
-        { "name": "Linux", "level": 78 }
+        {
+          "name": "AWS (EC2, S3, Amplify)",
+          "level": 82
+        },
+        {
+          "name": "Docker",
+          "level": 80
+        },
+        {
+          "name": "Git / GitHub",
+          "level": 94
+        },
+        {
+          "name": "CI/CD pipelines",
+          "level": 82
+        },
+        {
+          "name": "Playwright E2E",
+          "level": 86
+        },
+        {
+          "name": "Payments / Direct Debit",
+          "level": 84
+        }
       ]
     }
   ],
   "experienceBars": [
-    { "stack": "Frontend / UI Crafting", "value": 90 },
-    { "stack": "Core Programming", "value": 92 },
-    { "stack": "Backend / APIs", "value": 86 },
-    { "stack": "Database & Querying", "value": 88 },
-    { "stack": "Git & Collaboration", "value": 92 },
-    { "stack": "UX Thinking", "value": 80 }
+    {
+      "stack": "Frontend / UI Crafting",
+      "value": 92
+    },
+    {
+      "stack": "Backend / APIs",
+      "value": 90
+    },
+    {
+      "stack": "Database & Data Modelling",
+      "value": 88
+    },
+    {
+      "stack": "Real-time & Integrations",
+      "value": 86
+    },
+    {
+      "stack": "Cloud & Deployment",
+      "value": 82
+    },
+    {
+      "stack": "Testing & Release Safety",
+      "value": 85
+    }
   ]
 }

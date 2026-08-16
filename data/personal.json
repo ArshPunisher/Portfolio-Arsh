@@ -10,9 +10,9 @@
     "Hola, I'm Arsh.",
     "Sawasdee, I'm Arsh."
   ],
-  "intro": "I'm a Full-Stack Web Developer turning bold ideas into pixel-perfect, performance-obsessed web products. From silky-smooth React interfaces to battle-tested Node.js backends, I build the kind of software users actually love opening twice.",
-  "longBio": "I design, engineer, and ship full-stack web applications end to end. My toolkit revolves around React, Next.js, Node.js, Express, PostgreSQL, MongoDB, Firebase, and Tailwind CSS, and my obsession is the seam where elegant frontends meet rock-solid backends. I treat every project like a flagship release: motion that feels intentional, data that flows in milliseconds, and architecture that scales without drama.",
-  "location": "India",
+  "intro": "I'm a Full-Stack Developer who ships systems real businesses run on — live GPS fleet software operating under strict UK/EU transport law, multi-tenant SaaS handling real customer data and real billing, and national-scale admin and reporting systems used daily across India.",
+  "longBio": "I design, engineer, and ship full-stack systems end to end. React, Next.js, and React Native on the front end; Node.js, Spring Boot, APIs, data architecture, and real-time systems underneath; AWS, Firebase, and Docker throughout. I've built a transport management platform engineered to satisfy UK/EU drivers'-hours and tachograph law, a multi-tenant garage SaaS with tenant isolation enforced at the architecture level, a platform-wide billing and governance console, and the backend plus two web apps running a national volunteer organization's operations across India. I care about the problem the software has to survive, not just whether it runs in a demo.",
+  "location": "Amritsar, Punjab, India",
   "availability": "Open for select freelance & full-time roles",
   "email": "arshsiddle0822@gmail.com",
   "resumeUrl": "https://drive.google.com/file/d/1xiKKmDzm4BkmVMlGxZsSaCCTBBghnkpE/view?usp=sharing",
@@ -22,10 +22,22 @@
   "happyClients": 18,
   "linesOfCoffee": "∞",
   "stats": [
-    { "label": "Years building the web", "value": "3+" },
-    { "label": "Products shipped", "value": "24" },
-    { "label": "Happy collaborators", "value": "18" },
-    { "label": "Average Lighthouse score", "value": "98" }
+    {
+      "label": "Years building the web",
+      "value": "3+"
+    },
+    {
+      "label": "Production platforms shipped",
+      "value": "5"
+    },
+    {
+      "label": "Companies shipped for",
+      "value": "2"
+    },
+    {
+      "label": "Countries served",
+      "value": "2"
+    }
   ],
   "principles": [
     {

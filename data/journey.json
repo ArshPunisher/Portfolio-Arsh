@@ -1,37 +1,37 @@
 {
   "title": "The long version of how I got here.",
   "eyebrow": "Journey",
-  "subtitle": "A timeline of the moments, missteps, and milestones that turned 'curious kid with a laptop' into a full-stack engineer who ships.",
+  "subtitle": "A timeline of the moments, missteps, and milestones that turned 'curious kid with a laptop' into a full-stack engineer shipping software that businesses run on.",
   "milestones": [
     {
-      "year": "2021",
-      "title": "First lines of real JavaScript",
-      "body": "Started building tiny browser games and to-do apps. The bug, as expected, never left."
+      "year": "2020",
+      "title": "Started Computer Engineering",
+      "body": "Began a B.E. in Computer Engineering at I.K.G. Punjab Technical University, and started writing code that had to work for someone other than me."
     },
     {
       "year": "2022",
-      "title": "Discovered React",
-      "body": "Stumbled into the component model, never went back to vanilla DOM-spaghetti. Spent the year shipping side projects on weekends."
+      "title": "Committed to the full stack",
+      "body": "Went deep on React on the front end and Spring Boot and Node on the back, deliberately refusing to specialise until I could carry a feature end to end."
     },
     {
       "year": "2023",
-      "title": "Joined YPSS as a Full Stack Developer",
-      "body": "First production codebase, first on-call shift, first taste of 'designing for scale'. Built admin tools used by real humans."
+      "title": "Joined YPSS as a Full-Stack Web Developer",
+      "body": "First production codebase with real users. Built the backend and two web apps running a national volunteer organization's operations across India."
     },
     {
       "year": "2024",
-      "title": "Internship at Xampus + first hackathon win",
-      "body": "Animated marketing builds with GSAP, integrated payments and storage. Won a national-level hackathon with a 36-hour MERN build."
+      "title": "Graduated, and shipped through it",
+      "body": "Finished the B.E. with a 7.36 CGPA while running the org hierarchy, permission engine, and analytics dashboards at YPSS in parallel."
     },
     {
       "year": "2025",
-      "title": "Owned a full-stack analytics suite end-to-end",
-      "body": "Designed the schema, built the API, shipped the dashboards, and trained the operators. The product still runs daily."
+      "title": "National-scale systems, daily use",
+      "body": "Aadhaar OCR verification, exportable PDF/Excel analytics drilling down by zone and branch, real-time chat and push — used every day, across India, until I wrapped up in December."
     },
     {
       "year": "2026",
-      "title": "Going independent",
-      "body": "Opened up freelance and select full-time conversations. Doubled down on premium 3D web experiences and product-grade builds."
+      "title": "Joined Totalsoft IT Solutions",
+      "body": "Full stack across production SaaS for logistics and service-industry clients: live GPS fleet software under UK/EU transport law, multi-tenant garage SaaS, and a platform-wide billing and governance console."
     }
   ],
   "values": [
